@@ -39,3 +39,6 @@ CREATE TABLE user_answers(
 	FOREIGN KEY (client_id) REFERENCES clients(id)
 );
 
+CREATE TABLE pet_suggerstions (
+? Do we need to store the suggestions? I guess if we authenticate a user we could
+);
