@@ -1,0 +1,15 @@
+/*footer styling*/
+/*https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end*/
+@media (min-height: 320px) {
+    .ui.footer { 
+      position: absolute;
+      bottom: 0;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  }
+
+/*Add margin in between the home page main content section and the top navigation bar */
+#home-page-content {
+    margin-top: 0px;
+}
