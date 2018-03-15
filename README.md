@@ -1,9 +1,23 @@
 # PetMatch
-Pet adoption match page
+Pet adoption match app
+
+## Project Plan/Proposal
+* https://docs.google.com/document/d/1UelUbeVC4njGvu5u96L1PSW4iboyP3M2hcSumqO5JMk/edit
+
+## Tasks
+* Trello: https://trello.com/b/VZtg0AKd/task-board
+
+## Story curation (feature/requirements list)
+* Trello: https://trello.com/b/PmnAEQCY/story-curation
+	* Add features here so that the team can track them.
+	* Move feature to Done when feature is tested and complete.
+
+## Testing Strategy
+	* TBD
 
 ## Git help
 * When you start coding
-	* <pre>git checkout -b branch_name --track origin/master</pre>
+<pre>git checkout -b branch_name --track origin/master</pre>
 
 * When you are ready to commit your changes:
 	* <pre>git add .</pre>
@@ -16,14 +30,9 @@ Pet adoption match page
 		* This pulls down the PR that was just merged, that happened on Github, not on your laptop.
 	* <pre>git pull origin master</pre>
 
-## Tasks
-* Trello: https://trello.com/dreamteam14136862 
-
-## Project Plan/Proposal
-* https://docs.google.com/document/d/1UelUbeVC4njGvu5u96L1PSW4iboyP3M2hcSumqO5JMk/edit
 
 ## Best time to meet outside of class
-* Weekdays: After 5 p.m. on weekdays.
+* Weekdays after 5 p.m.
 * Meeting place: Robin’s house
 
 ## Possible pet adoption APIs to use in app
@@ -41,6 +50,7 @@ Pet adoption match page
 * MySQL Database
 * Node.js
 * Express
+* Facebook authentication (new technology)
 
 ### Frontend technologies
 * Semantic UI CSS framework (https://semantic-ui.com/)
