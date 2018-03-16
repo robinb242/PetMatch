@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+        <meta charset="utf-8">
+        <!--Viewport for making app responsive on mobile and tablet devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AdoptMe</title>
+        <!--JQuery links-->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!--Semantic UI CSS-->
+		<link rel="stylesheet" type="text/css" href="./assets/css/Semantic-UI-CSS-master/semantic.min.css">
+		<script src="./assets/css/Semantic-UI-CSS-master/semantic.min.js"></script>
+		<!--External CSS-->
+		<link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+		<!--Font Awesome link-->
+		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    
+    <body>
+        <div class="ui container">
+            <!--Navbar. With semantic UI, navbar is just called a menu.-->
+            <div class="ui stackable inverted menu">
+                <!--Logo/Name plate goes here.-->
+                <div class="header item">
+                    <h1><i class="fas fa-paw"></i> AdoptMe</h1>
+                </div>
+                <a class="item" href="index.html">
+                <i class="home icon"></i> Home
+                </a>
+                <a class="item" href="search.html">
+                <i class="grid layout icon"></i> Browse
+                </a>
+                <a class="item" href="quiz.html">
+                <i class="clipboard outline icon"></i> Take quiz
+                </a>
+                <div class="ui simple dropdown right item">
+                    More
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item"><i class="info cirle icon"></i>About</a>
+                        <a class="item"><i class="envelope outline icon"></i>  Contact</a>
+                        <a class="item"><i class="question circle icon"></i>Help</a>
+                        <a class="item"><i class="settings icon"></i>Log out</a>
+                    </div>
+                </div>
+            </div>
+            <div id="header">
+                <h2>Take the pet compatibility quiz to find your perfect pet<h2>
+            </div>
+
+            <div class="ui stackable two column grid">
+                <!--User has two options. They can either...
+                    take a compatability quiz or go straight to search page.-->
+                <div class="stretched row">
+                    <div class="column">					
+                        <div class="ui fluid card">
+                            <div class="content center aligned">
+                                <div id="quiz-instructions">
+                                    <h4><b>Instructions: </b>The pet compatibility quiz contains questions that will help us determine the ideal pet for you based on your preferences, interests, and personality.</h4>
+                                    <h4>For an accurate match, answer the questions truthfully and don't overthink them. Select the best answer even if it's not ideal. </h4>
+                                </div>
+                                <div class="ui form" id="question-div">
+                                    <!--Question and choices will be dynamically added to this div here when user takes quiz-->
+                                </div>
+                            </div>
+                            <div class="extra content" id="view-quiz-results-div">
+                                <!--Start quiz button-->
+                                <button class="ui fluid blue button" id="start-quiz-btn">START QUIZ</button>
+                                <!--View quiz results button will be added to this div when user finishes div and quiz results are ready.-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="ui">
+                            <!--Placeholder image of dog-->
+                            <img class="ui fluid image" src="./assets/img/dog.jpg" alt="dog">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
+            <div class="ui inverted vertical footer segment">
+                <div class="ui container">
+                    <h2>AdoptMe</h2>
+                    <p><i class="copyright outline icon"></i>Copyright 2018. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    <!--External Javascript-->
+	<script src="./assets/js/petMatch.js"></script>
+    </body>
+</html>
