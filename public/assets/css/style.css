@@ -1,20 +1,25 @@
 /*footer styling*/
 /*https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end*/
 @media (min-height: 320px) {
-    .ui.footer { 
+    .app-footer { 
       position: absolute;
-      bottom: 0;
-      padding: 10px;
-      margin-top: 20px;
+      bottom: 0 !important;
+      padding: 20px !important;
+      margin-top: 60px !important;
     }
   }
 
 /*Add margin in between the home page main content section and the top navigation bar */
-#home-page-content {
-    margin-top: 0px;
+.main-content-section {
+    margin-top:  20px !important;
 }
 
 /*Styling for choice buttons in compatibility quiz*/
 .choiceBtn {
   margin-top: 20px !important;
+}
+
+/*Styling for the app navbar*/
+.app-navbar {
+  padding: 20px !important;
 }
