@@ -48,6 +48,9 @@ var questionSet = {
 //Hide question-div at start of quiz.
 $("#question-div").hide();
 
+//Hide progress bar at start of quiz.
+$("#quiz-progress-bar").hide();
+
 //When start quiz button is clicked, start quiz.
 $("#start-quiz-btn").on("click", function() {
 	start();
@@ -59,6 +62,8 @@ function start() {
     $("#start-quiz-btn").hide();
     //Hide quiz instructional text.
     $("#quiz-instructions").hide();
+    //Show progress bar when quiz is started.
+    $("#quiz-progress-bar").show();
     //Show the question-div at the start of the quiz. Display question and choices based on the current count. Count starts at 0.
     $("#question-div").show().html("<h1> " + questionSet.questionArray[count].question + "</h1>");
     //Loop through the number of choices. For each choice that the user can guess...
@@ -86,16 +91,27 @@ function nextQuestion() {
     $("#question-div").hide();
     //Remove choice buttons from previous question from HTML.
     $("#view-quiz-results-div").empty();
-	 //If the count is the same as the length of the questionSet.questionArray array, find match.
-  	if (count === questionSet.questionArray.length) {
-        findMatch();
-  	}
+    //Increment progress bar by 10 for each question.
+    $('#quiz-progress-bar')
+        .progress('increment', 10);
+            //If the count is the same as the length of the questionSet.questionArray array, find match.
+            if (count === questionSet.questionArray.length) {
+                findMatch();
+            }
 
-  	//else, if there are still questions left, go to next question.
-  	else {
-        start();
-	}
-}
+            //else, if there are still questions left, go to next question.
+            else {
+                start();
+            }
+    }
+
+    $('#quiz-progress-bar')
+        .progress({
+            text: {
+            active  : '{value} %',
+            success : '{total} %',
+            }
+        });
 
 //After user answers all of the questions, calculate results.
 function findMatch() {
