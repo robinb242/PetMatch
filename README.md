@@ -12,6 +12,9 @@ Pet adoption match app
 	* Add features here so that the team can track them.
 	* Move feature to Done when feature is tested and complete.
 
+## Compatibility quiz questions
+	* https://docs.google.com/document/d/1Mt60SJANtHSA12bLsydXwkYACuC0Fw9KfRVEErU-7yc/edit?usp=sharing
+
 ## Testing Strategy
 	* TBD
 
