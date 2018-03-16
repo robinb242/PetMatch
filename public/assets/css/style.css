@@ -13,3 +13,8 @@
 #home-page-content {
     margin-top: 0px;
 }
+
+/*Styling for choice buttons in compatibility quiz*/
+.choiceBtn {
+  margin-top: 20px !important;
+}
