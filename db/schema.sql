@@ -14,12 +14,17 @@ CREATE TABLE animal_traits (
 	trait_security BOOLEAN NOT NULL,
 	trait_independent BOOLEAN NOT NULL,
 	trait_cuddly BOOLEAN NOT NULL,
-	trait_large BOOLEAN NOT NULL,
-	trait_medium BOOLEAN NOT NULL,
-	trait_small BOOLEAN NOT NULL,
+	trait_space BOOLEAN NOT NULL,
+	trait_size integer not null check (phone_number between 1 and 5),
+	trait_affection integer not null check (phone_number between 1 and 5),
+	trait_clean integer not null check (phone_number between 1 and 5),
+	trait_unconvertional BOOLEAN NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (client_id) REFERENCES clients(id)
 );
+
+
+
 
 
 CREATE TABLE user_answers(
@@ -32,13 +37,25 @@ CREATE TABLE user_answers(
 	trait_security BOOLEAN NOT NULL,
 	trait_independent BOOLEAN NOT NULL,
 	trait_cuddly BOOLEAN NOT NULL,
-	trait_large BOOLEAN NOT NULL,
-	trait_medium BOOLEAN NOT NULL,
-	trait_small BOOLEAN NOT NULL,
+	trait_space BOOLEAN NOT NULL,
+	trait_size integer not null check (phone_number between 1 and 5),
+	trait_affection integer not null check (phone_number between 1 and 5),
+	trait_clean integer not null check (phone_number between 1 and 5),
+	trait_unconvertional BOOLEAN NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (client_id) REFERENCES clients(id)
 );
 
-CREATE TABLE pet_suggerstions (
-? Do we need to store the suggestions? I guess if we authenticate a user we could
+CREATE TABLE pet_suggestions (
+ id int NOT NULL AUTO_INCREMENT,
+	user_name varchar(255) NOT NULL,
+	suggestionOne varchar(255) NOT NULL,
+	suggestionTwo varchar(255) NOT NULL,
+);
+
+CREATE TABLE site_evaluation{
+	id int NOT NULL AUTO_INCREMENT,
+	user_name varchar(255) NOT NULL,
+	siteRanking int,
+	
 );
