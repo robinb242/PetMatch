@@ -56,6 +56,7 @@ $("#start-quiz-btn").on("click", function() {
 	start();
 });
 
+
 //Start quiz function
 function start() {
     //Hide start quiz button.
@@ -117,8 +118,26 @@ function nextQuestion() {
 function findMatch() {
     $("#question-div").show().html("<h1>" + "Your results are ready!" + "</h1>");
     //Create a button (resultsBtn).
-    var resultsBtn = $("<button>");
+    resultsBtn = $("<button>");
     resultsBtn.html("<h2>" +  "View results" + "</h2>");
-    resultsBtn.addClass("ui fluid blue button");
+    resultsBtn.addClass("ui fluid blue button").attr("id", "view-results-btn");
     $("#view-quiz-results-div").append(resultsBtn);
 }
+
+//When the user clicks the view results button, show match.
+$("#view-results-btn").on("click", function() {
+    // var matchModal = $("<div>");
+    // matchModal.addClass("ui modal").attr("id", "match-results-modal");
+    // var matchHeader = $("<div>");
+    // matchHeader.addClass("header").text("It's a match!");
+    // var matchDetails = $("<div>");
+    // matchDetails.addClass("content").text("Match Details");
+    // matchModal.append(matchHeader).append(matchDetails);
+    // $("#main-content-section").append(matchModal);
+    // $('#match-results-modal').modal('show');
+    console.log("button clicked");
+});
+
+
+
+
