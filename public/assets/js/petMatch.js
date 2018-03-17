@@ -138,6 +138,11 @@ $("#view-results-btn").on("click", function() {
     console.log("button clicked");
 });
 
+//Gender search field drop down
+// $('select.dropdown') 
+//   .dropdown()
+// ;
+
 
 
 
