@@ -4,6 +4,9 @@ Pet adoption match app
 ## Project Plan/Proposal
 * https://docs.google.com/document/d/1UelUbeVC4njGvu5u96L1PSW4iboyP3M2hcSumqO5JMk/edit
 
+## Project requirements
+* https://drive.google.com/open?id=1FwtjOUDmHPothQzMbqcVFxMssJje15VCrFa4L_EdM3E
+
 ## Tasks
 * Trello: https://trello.com/b/VZtg0AKd/task-board
 
@@ -13,10 +16,10 @@ Pet adoption match app
 	* Move feature to Done when feature is tested and complete.
 
 ## Compatibility quiz questions
-	* https://docs.google.com/document/d/1Mt60SJANtHSA12bLsydXwkYACuC0Fw9KfRVEErU-7yc/edit?usp=sharing
+* https://docs.google.com/document/d/1Mt60SJANtHSA12bLsydXwkYACuC0Fw9KfRVEErU-7yc/edit?usp=sharing
 
 ## Testing Strategy
-	* TBD
+TBD
 
 ## Git help
 * When you start coding
