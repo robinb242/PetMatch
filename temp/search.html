@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--Viewport for making app responsive on mobile and tablet devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdoptMe</title>
+    <!--JQuery link-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!--Semantic UI CSS-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/Semantic-UI-CSS-master/semantic.min.css">
+    <script src="./assets/css/Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="./assets/css/Semantic-UI-CSS-master/semantic.js"></script>
+    <!--External Javascript-->
+    <script src="./assets/js/petMatch.js"></script>
+    <!--External CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <!--Font Awesome link-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+	<body>
+		<div class="ui container">
+            <!--Navbar. With semantic UI, navbar is just called a menu.-->
+            <div class="ui stackable inverted menu app-navbar">
+                <!--Logo/Name plate goes here.-->
+                <div class="header item">
+                    <h1><i class="fas fa-paw"></i> AdoptMe</h1>
+                </div>
+                <a class="item" href="index.html">
+                <i class="home icon"></i> Home
+                </a>
+                <a class="item" href="search.html">
+                <i class="grid layout icon"></i> Browse
+                </a>
+                <a class="item" href="quiz.html">
+                <i class="clipboard outline icon"></i> Take quiz
+                </a>
+                </a>
+                <a class="item" href="#">
+                <i class="heart outline icon"></i> Saved pets
+                </a>
+                <div class="ui simple dropdown right item">
+                    More
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item"><i class="info cirle icon"></i>About</a>
+                        <a class="item"><i class="envelope outline icon"></i>  Contact</a>
+                        <a class="item"><i class="question circle icon"></i>Help</a>
+                        <a class="item"><i class="settings icon"></i>Log out</a>
+                    </div>
+                </div>
+            </div>
+            <div id="header">
+                <h2>Search for the perfect pet<h2>
+            </div>
+        
+            <div class="ui stackable two column grid main-content-section">
+                <div class="stretched row">
+                    <!--Pet search form-->
+                    <div class="seven wide column">					
+                        <div class="ui sidebar">
+                            ...
+                        </div>
+                        <div class="pusher">
+                            <form class="ui form">
+                                <div class="field">
+                                    <label>Pet type</label>
+                                    <div class="ui selection dropdown" id="type-dropdown-field">
+                                        <input type="hidden" name="pet-type">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Type</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">Cat</div>
+                                            <div class="item" data-value="0">Dog</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                  <label>Breed</label>
+                                  <input type="text" name="breed" placeholder="Golden Retriever">
+                                </div>
+                                <div class="field">
+                                  <label>Zip code</label>
+                                  <input type="text" name="zip-code" placeholder="Zip Code">
+                                </div>
+                                <div class="field">
+                                    <label>Gender</label>
+                                    <div class="ui selection dropdown" id="gender-dropdown-field">
+                                        <input type="hidden" name="gender">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Gender</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">Male</div>
+                                            <div class="item" data-value="0">Female</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="ui button" type="submit" id="search-btn">SEARCH</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Pet search results section-->
+                    <div class="nide wide column">
+                        <div class="ui card fluid search-card">
+                            <!--LIKE and DISLIKE buttons go here.-->
+                            <div class="extra content" id="pet-search-buttons">
+                                <span class="left floated like" id="dislike-btn-span">           
+                                </span>
+                                <span class="right floated star" id="like-btn-span">
+                                </span>
+                            </div>
+                            <!--Pet image goes here-->
+                            <div class="image" id="pet-search-image">
+                                <img id="pet-search-photo">
+                            </div>
+                            <!--Pet search details go here-->
+                            <div class="content" id="pet-search-details">
+                                <h4 id="pet-name"></h4>
+                                <h4 id="pet-age"></h4>
+                                <h4 id="pet-city"></h4>
+                                <h4 id="pet-trained"></h4>
+                            </div>
+                            <!--Only display this div if there are no more search results to display to the user.-->
+                            <div class="content center aligned" id="end-pet-search">
+                                <h4>No more pets are available for this search.</h4>
+                                <h4>To see all the pets you LIKED, click <b>Saved pets</b> from the menu.</h4>
+                                <h4>To start a new search, enter the new pet details in the search form.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Footer-->
+            <!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
+            <div class="ui inverted vertical footer segment app-footer">
+                <div class="ui container">
+                    <h2>AdoptMe</h2>
+                    <p><i class="copyright outline icon"></i>Copyright 2018. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        
+    <!--External Javascript file-->
+	<script src="./assets/js/petMatch.js"></script>
+	</body>
+</html>
