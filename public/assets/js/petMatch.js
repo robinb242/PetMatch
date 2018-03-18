@@ -146,17 +146,18 @@ function nextQuestion() {
 //After user answers all of the questions, calculate results.
 function findMatch() {
     $("#question-div").show().html("<h1>" + "Your results are ready!" + "</h1>");
-    //Create a button (resultsBtn).
+    //Create a button to view the quiz results (resultsBtn).
     resultsBtn = $("<button>");
     resultsBtn.html("<h2>" +  "View results" + "</h2>");
     resultsBtn.addClass("ui fluid blue button");
     resultsBtn.attr("id", "view-results-btn");
+    //Append the resultsBtn so it shows up in the HTML.
     $("#view-quiz-results-div").append(resultsBtn);
     //When the user clicks the view results button, show match.
     $("#view-results-btn").on("click", function() {
         console.log("button clicked");
         //When user submits scores...
-        userQuizValues = 
+        userQuizValues = [
             {
             question1: scoresArray[0],
             question2: scoresArray[1],
@@ -169,6 +170,7 @@ function findMatch() {
             question9: scoresArray[8],
             question10: scoresArray[9]
             }
+        ]
 
         console.log(userQuizValues);
         
