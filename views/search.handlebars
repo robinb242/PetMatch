@@ -5,14 +5,18 @@
         <div class="header item">
             <h1><i class="fas fa-paw"></i> AdoptMe</h1>
         </div>
-        <a class="item" href="index">
+        <a class="item" href="/">
         <i class="home icon"></i> Home
         </a>
-        <a class="item" href="search">
+        <a class="item" href="petsearch">
         <i class="grid layout icon"></i> Browse
         </a>
         <a class="item" href="quiz">
         <i class="clipboard outline icon"></i> Take quiz
+        </a>
+        </a>
+        <a class="item" href="#">
+        <i class="heart outline icon"></i> Saved pets
         </a>
         <div class="ui simple dropdown right item">
             More
@@ -30,22 +34,83 @@
     </div>
 
     <div class="ui stackable two column grid main-content-section">
-        <!--User has two options. They can either...
-            take a compatability quiz or go straight to search page.-->
         <div class="stretched row">
-            <div class="column">					
+            <!--Pet search form-->
+            <div class="seven wide column">					
                 <div class="ui sidebar">
                     ...
                 </div>
                 <div class="pusher">
-                    Your site's actual content
+                    <form class="ui form">
+                        <!--Pet type field - CAT or DOG-->
+                        <div class="field">
+                            <label>Pet type</label>
+                            <div class="ui selection dropdown" id="type-dropdown-field">
+                                <input type="hidden" name="pet-type">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Type</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Cat</div>
+                                    <div class="item" data-value="0">Dog</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Enter animal breed-->
+                        <div class="field">
+                            <label>Breed</label>
+                            <input type="text" name="breed" placeholder="Golden Retriever">
+                        </div>
+                        <!--Enter zip code to find list of pets in your area.-->
+                        <div class="field">
+                            <label>Zip code</label>
+                            <input type="text" name="zip-code" placeholder="Zip Code">
+                        </div>
+                        <!--Select the gender of the pet that you want to search for-->
+                        <div class="field">
+                            <label>Gender</label>
+                            <div class="ui selection dropdown" id="gender-dropdown-field">
+                                <input type="hidden" name="gender">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Gender</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Male</div>
+                                    <div class="item" data-value="0">Female</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Click search button to bring up search results-->
+                        <button class="ui button" type="submit" id="search-btn">SEARCH</button>
+                    </form>
                 </div>
             </div>
-            
-            <div class="column">
-                <div class="ui">
-                    <!--Placeholder image of dog-->
-                    <img class="ui fluid image" src="./assets/img/dog.jpg" alt="dog">
+
+            <!--Pet search results section-->
+            <div class="nide wide column">
+                <div class="ui card fluid search-card">
+                    <!--LIKE and DISLIKE buttons go here.-->
+                    <div class="extra content" id="pet-search-buttons">
+                        <span class="left floated like" id="dislike-btn-span">           
+                        </span>
+                        <span class="right floated star" id="like-btn-span">
+                        </span>
+                    </div>
+                    <!--Pet image goes here-->
+                    <div class="image" id="pet-search-image">
+                        <img id="pet-search-photo">
+                    </div>
+                    <!--Pet search details go here-->
+                    <div class="content" id="pet-search-details">
+                        <h4 id="pet-name"></h4>
+                        <h4 id="pet-age"></h4>
+                        <h4 id="pet-city"></h4>
+                        <h4 id="pet-trained"></h4>
+                    </div>
+                    <!--Only display this div if there are no more search results to display to the user.-->
+                    <div class="content center aligned" id="end-pet-search">
+                        <h4>No more pets are available for this search.</h4>
+                        <h4>To see all the pets you LIKED, click <b>Saved pets</b> from the menu.</h4>
+                        <h4>To start a new search, enter the new pet details in the search form.</h4>
+                    </div>
                 </div>
             </div>
         </div>
