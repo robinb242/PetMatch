@@ -6,10 +6,10 @@ var Animal_traits = sequelize.define("animal_trait", {
       type: DataTypes.STRING
     },
     trait_kids: {
-      type: DataTypes.STRING
+      type: DataTypes.BOOLEAN
     },
     trait_active: {
-      type: DataTypes.DATE
+      type: DataTypes.BOOLEAN
     }, 
     trait_security: {
       type: DataTypes.BOOLEAN
@@ -20,16 +20,26 @@ var Animal_traits = sequelize.define("animal_trait", {
     trait_cuddly: {
       type: DataTypes.BOOLEAN
     }, 
-    trait_large: {
+    trait_space: {
       type: DataTypes.BOOLEAN
     },
-    trait_medium: {
-      type: DataTypes.BOOLEAN
+    trait_size: {
+      type: DataTypes.INTEGER
     },
-    trait_small: {
+    trait_affection: {
+      type: DataTypes.INTEGER
+    },
+     trait_clean: {
+      type: DataTypes.INTEGER
+    },
+      trait_unconverntional: {
       type: DataTypes.BOOLEAN
     }
+    {timestamp: false}
 
   });
-  return Animal_traits;
+Animal_traits.synch();
+  
+return Animal_traits;
 }
+
