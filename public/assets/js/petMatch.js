@@ -10,39 +10,59 @@ var choiceBtn;
 //Create variable for View Quiz Results button so that we can create it using jQuery.
 var resultsBtn;
 
+//Create an array that will hold all of the user's scores.
+var scoresArray = [];
+
+//Create variable to hold user quiz values.
+var userQuizValues = [];
+
 //Create variable to hold all questions.
+//In binary, 1 is true. 0 is false.
 var questionSet = {
     questionArray: [{
-        question: "I would prefer a pet that is good around other dogs and other people, especially children.",
-        choices: ["AGREE", "DISAGREE"]
+        question: "I would prefer a pet that is good around other animals and other people, especially children.",
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
         }, {
         question:  "I would like to have a pet that enjoys being outdoors and and that would like exercising with me.",
-        choices: ["AGREE", "DISAGREE"]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
         }, {
         question: "I would like a pet that is loyal and able to be trained to protect me and my family.",
-        choices: ["AGREE", "DISAGREE"]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
         }, {
         question: "I consider myself to be an affectionate, emotional person.",
-        choices: ["AGREE", "DISAGREE"]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
+
         }, {
         question: "I prefer a pet that likes to stay inside and cuddle with me.",
-        choices: ["AGREE", "DISAGREE"]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
         }, {
         question: "I have a big backyard.",
-        choices: ["YES", "NO"]
+        choices: ["YES", "NO"],
+        values: ["1", "0"]
         }, {
         question: "What size pet are you looking for?",
-        choices: ["SMALL", "MEDIUM", "LARGE"]
+        choices: ["SMALL", "MEDIUM", "LARGE"],
+        values: ["0", "1", "2"]
+
         }, {
         question: "I don't mind a pet that is always willing to give me affection and is very energetic.",
-        choices: ["AGREE", "DISAGREE"]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
         }, {
         question: "I always keep my house clean and organized.",
-        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question: "I would like a pet other than a cat or dog.",
-        choices: ["AGREE", "DISAGREE"]
-        }]
+        choices: ["AGREE", "DISAGREE"],
+        values: ["1", "0"]
+        }
+    ]
 };
 
 //Hide question-div at start of quiz.
@@ -69,18 +89,27 @@ function start() {
     $("#question-div").show().html("<h1> " + questionSet.questionArray[count].question + "</h1>");
     //Loop through the number of choices. For each choice that the user can guess...
 	for (var i = 0; i < questionSet.questionArray[count].choices.length; i++) {
-		//Create a button (choiceBtn).
+		//Create buttons (agreeBtn).
 		var choiceBtn = $("<button>");
 		//Add semantic UI styling to the button to make the button look cool.
-		choiceBtn.addClass("ui fluid blue button choiceBtn");
-		//Give each button a data attribute called data-choice.
-		choiceBtn.attr("data-choice", questionSet.questionArray[count].choices[i]);
+        choiceBtn.addClass("ui fluid blue button choiceBtn");
+        //Give each button an id.
+        choiceBtn.attr("id", "question-" + (count + 1) + "-" + questionSet.questionArray[count].values[i]);
+		//Give each button a data attribute called data-value.
+		choiceBtn.attr("value", questionSet.questionArray[count].values[i]);
 		//Then give each choiceBtn a text equal to questionSet.questionArray[count].choices[i]
 		choiceBtn.text(questionSet.questionArray[count].choices[i]);
 		//Append choiceBtn to question-div so that it appears right below the question.
 		$("#view-quiz-results-div").show().append(choiceBtn);
-		//When user clicks the choiceBtn, go to next question.
-		choiceBtn.click(nextQuestion);
+		//When user clicks the choiceBtn, push value to user's scores array and go to next question.
+		$(choiceBtn).on("click", function() {
+            //In binary, 1 is true. 0 is false.
+            //console.log($(this).val());
+            scoresArray.push($(this).val());
+            console.log(scoresArray);
+            //Go to the next question in the quiz.
+            nextQuestion();
+        });
 	}
 }
 
@@ -120,23 +149,40 @@ function findMatch() {
     //Create a button (resultsBtn).
     resultsBtn = $("<button>");
     resultsBtn.html("<h2>" +  "View results" + "</h2>");
-    resultsBtn.addClass("ui fluid blue button").attr("id", "view-results-btn");
+    resultsBtn.addClass("ui fluid blue button");
+    resultsBtn.attr("id", "view-results-btn");
     $("#view-quiz-results-div").append(resultsBtn);
-}
+    //When the user clicks the view results button, show match.
+    $("#view-results-btn").on("click", function() {
+        console.log("button clicked");
+        //When user submits scores...
+        userQuizValues = 
+            {
+            question1: scoresArray[0],
+            question2: scoresArray[1],
+            question3: scoresArray[2],
+            question4: scoresArray[3],
+            question5: scoresArray[4],
+            question6: scoresArray[5],
+            question7: scoresArray[6],
+            question8: scoresArray[7],
+            question9: scoresArray[8],
+            question10: scoresArray[9]
+            }
 
-//When the user clicks the view results button, show match.
-$("#view-results-btn").on("click", function() {
-    // var matchModal = $("<div>");
-    // matchModal.addClass("ui modal").attr("id", "match-results-modal");
-    // var matchHeader = $("<div>");
-    // matchHeader.addClass("header").text("It's a match!");
-    // var matchDetails = $("<div>");
-    // matchDetails.addClass("content").text("Match Details");
-    // matchModal.append(matchHeader).append(matchDetails);
-    // $("#main-content-section").append(matchModal);
-    // $('#match-results-modal').modal('show');
-    console.log("button clicked");
-});
+        console.log(userQuizValues);
+        
+        //Send the POST request using ajax.
+        // $.ajax("/api/new", {
+        //     type: "POST",
+        //     data: userQuizValues
+        //     }).then(
+        //     function() {
+        //         console.log("posted quiz values");
+        //     }
+        //     );
+    });
+}
 
 //Gender search field drop down
 // $('select.dropdown') 
@@ -233,7 +279,6 @@ function startSearch() {
     $(dislikeBtn).on("click", function() {
         nextPet();
     });
-	// }
 }
 
 //When user clicks Like button, go to the next pet.
@@ -272,6 +317,8 @@ function endSearch() {
     //Tell user there are no more pets for this search.
     $("#end-pet-search").show();
 }
+
+
 
 
 
