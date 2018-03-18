@@ -4,7 +4,7 @@
   "description": "Pet adoption match page",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,16 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.2",
     "sequelize": "^4.36.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.1",
+    "chai": "^4.1.2",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.2.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-commonjs": "^1.0.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "mocha": "^5.0.4",
+    "watchify": "^3.11.0"
   }
 }
