@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
 // Creates a model that matches up with DB
-var Animal_traits = sequelize.define("animal_trait", {
+var Animal_traits = sequelize.define("animal_traits", {
     animal: {
       type: DataTypes.STRING
     },
@@ -35,7 +35,6 @@ var Animal_traits = sequelize.define("animal_trait", {
       trait_unconverntional: {
       type: DataTypes.BOOLEAN
     }
-    {timestamp: false}
 
   });
 Animal_traits.synch();

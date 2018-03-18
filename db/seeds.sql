@@ -13,7 +13,7 @@ VALUES ('doberman', false, true, true, true, false, true, 4, 4, 5, false),
 VALUES ('german shephard', false, true, true, true, false, true, 5, 4, 2, false),
 VALUES ('rottweiler', false, true, true, true, false, true, 4, 4, 5, false),
 VALUES ('boxer', false, true, true, true, false, true, 4, 4, 5, false),
-VALUES ('mastiff', true, false, true, true, false, true, 5, 4, 3);
+VALUES ('mastiff', true, false, true, true, false, true, 5, 4, 3, false);
 
 
 
