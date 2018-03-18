@@ -35,6 +35,10 @@
                 <a class="item" href="quiz.html">
                 <i class="clipboard outline icon"></i> Take quiz
                 </a>
+                </a>
+                <a class="item" href="#">
+                <i class="heart outline icon"></i> Saved pets
+                </a>
                 <div class="ui simple dropdown right item">
                     More
                     <i class="dropdown icon"></i>
@@ -51,8 +55,6 @@
             </div>
         
             <div class="ui stackable two column grid main-content-section">
-                <!--User has two options. They can either...
-                    take a compatability quiz or go straight to search page.-->
                 <div class="stretched row">
                     <!--Pet search form-->
                     <div class="seven wide column">					
@@ -93,30 +95,37 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="ui button" type="submit">SEARCH</button>
+                                <button class="ui button" type="submit" id="search-btn">SEARCH</button>
                             </form>
                         </div>
                     </div>
 
                     <!--Pet search results section-->
                     <div class="nide wide column">
-                        <div class="ui card fluid">
-                            <div class="image">
-                                <img src="./assets/img/dog.jpg">
-                            </div>
-                            <div class="content">
-                                <h4>Name: Sparky</h4>
-                                <h4>Age: 2</h4>
-                                <h4>City: Lakeville</h4>
-                                <h4>House trained: Yes</h4>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated like">
-                                        <a><i class="thumbs down outline icon"></i></a>           
-                                        </span>
-                                        <span class="right floated star">
-                                        <a><i class="heart outline icon"></i></a>
+                        <div class="ui card fluid search-card">
+                            <!--LIKE and DISLIKE buttons go here.-->
+                            <div class="extra content" id="pet-search-buttons">
+                                <span class="left floated like" id="dislike-btn-span">           
                                 </span>
+                                <span class="right floated star" id="like-btn-span">
+                                </span>
+                            </div>
+                            <!--Pet image goes here-->
+                            <div class="image" id="pet-search-image">
+                                <img id="pet-search-photo">
+                            </div>
+                            <!--Pet search details go here-->
+                            <div class="content" id="pet-search-details">
+                                <h4 id="pet-name"></h4>
+                                <h4 id="pet-age"></h4>
+                                <h4 id="pet-city"></h4>
+                                <h4 id="pet-trained"></h4>
+                            </div>
+                            <!--Only display this div if there are no more search results to display to the user.-->
+                            <div class="content center aligned" id="end-pet-search">
+                                <h4>No more pets are available for this search.</h4>
+                                <h4>To see all the pets you LIKED, click <b>Saved pets</b> from the menu.</h4>
+                                <h4>To start a new search, enter the new pet details in the search form.</h4>
                             </div>
                         </div>
                     </div>
@@ -133,7 +142,7 @@
             </div>
         </div>
         
-    <!--External Javascript-->
+    <!--External Javascript file-->
 	<script src="./assets/js/petMatch.js"></script>
 	</body>
 </html>
