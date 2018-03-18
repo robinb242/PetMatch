@@ -37,7 +37,6 @@ var Animal_traits = sequelize.define("animal_traits", {
     }
 
   });
-Animal_traits.synch();
   
 return Animal_traits;
 }
