@@ -1,6 +1,46 @@
 # PetMatch
 Pet adoption match app
 
+## Running tests
+
+### Getting started 
+To run one of the tests locally on your computer, perform the following steps:
+1. Change directory to the project root directory (PetMatch).
+
+2. Run the following command to make sure you have the testing dependencies (nightmare and mocha) available locally:
+<pre>npm install</pre>
+
+3. Start the server.
+<pre>nodemon server.js</pre>
+If you don't have nodemon installed, you can also start the server using node:
+<pre>node server.js</p>
+
+### Troubleshooting
+* If a test does not pass...
+	* Open the test script and ensure that the test is accurately described and up-to-date.
+	* Ensure that the server is running.
+	* File a GitHub issue if root cause cannot be determined.
+
+### Loading a page
+The app consists of several pages. Here's how you can test that these pages load successfully.
+
+1. Run the following command from the project root directory (PetMatch):
+<pre>npm test ./ui-testing/load-page-test.js</pre>
+
+2. Verify that all checks pass.
+If all checks pass, all pages load without error.
+
+### Taking the pet compatibility quiz
+STORY: As a user, I want to be able to take a quiz that matches me up with a pet based on my interests, personality, and preferences. The quiz should return the results.
+
+Here's how you can test this story:
+
+1. Run the following command from the project root directory (PetMatch):
+<pre>npm test ./ui-testing/nightmare/take-quiz-test.js</pre>
+An Electron browser window will open and take you through the pet compatibility quiz workflow.
+
+2. Verify that there are no errors and the quiz results modal opens.
+
 ## Heroku 
 * https://dashboard.heroku.com/teams/dream-team/overview
 

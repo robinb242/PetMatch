@@ -4,7 +4,8 @@
   "description": "Pet adoption match page",
   "main": "server.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
