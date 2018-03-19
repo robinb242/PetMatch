@@ -1,7 +1,12 @@
+//Pet type search field drop down
+$('#select')
+  .dropdown()
+;
+
 //Gender search field drop down
-// $('select.dropdown') 
-//   .dropdown()
-// ;
+$('#select2')
+  .dropdown()
+;
 
 //Create variable to hold count that will keep track of the index of the currently displayed pet.
 var searchCount = 0;
@@ -57,8 +62,9 @@ $("#search-btn").on("click", function() {
     //Set search count back to 0.
     searchCount = 0;
     //show search results.
-	startSearch();
+    startSearch(); 
 });
+
 
 //Start search function
 function startSearch() {
