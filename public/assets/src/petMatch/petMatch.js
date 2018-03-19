@@ -155,6 +155,10 @@ function findMatch() {
     $("#view-quiz-results-div").append(resultsBtn);
     //When the user clicks the view results button, show match.
     $("#view-results-btn").on("click", function() {
+        $("#match-results-modal").modal('show');
+        $("#match-results-modal").modal({
+            closable: true
+        });
         console.log("button clicked");
         //When user submits scores...
         userQuizValues = [
