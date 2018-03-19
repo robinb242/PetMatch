@@ -24,3 +24,8 @@
 .app-navbar {
   padding: 20px !important;
 }
+
+/* Rate this match button on match results modal*/
+#match-rating-btn {
+  margin-top: 30px;
+}
