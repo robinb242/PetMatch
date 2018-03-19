@@ -5,6 +5,7 @@ Pet adoption match app
 
 ### Getting started 
 <p>To run one of the tests locally on your computer, perform the following steps</p>
+
 1. Change directory to the project root directory (PetMatch).
 
 2. Run the following command to make sure you have the testing dependencies (nightmare and mocha) available locally:
@@ -31,13 +32,13 @@ The app consists of several pages. Here's how you can test that these pages load
 If all checks pass, all pages load without error.
 
 ### Taking the pet compatibility quiz
-STORY: As a user, I want to be able to take a quiz that matches me up with a pet based on my interests, personality, and preferences. The quiz should return the results.
+<p>STORY: As a user, I want to be able to take a quiz that matches me up with a pet based on my interests, personality, and preferences. The quiz should return the results.</p>
 
-Here's how you can test this story:
+<p>Here's how you can test this story:</p>
 
 1. Run the following command from the project root directory (PetMatch):
 <pre>npm test ./ui-testing/nightmare/take-quiz-test.js</pre>
-An Electron browser window will open and take you through the pet compatibility quiz workflow.
+<p>An Electron browser window will open and take you through the pet compatibility quiz workflow.</p>
 
 2. Verify that there are no errors and the quiz results modal opens.
 
