@@ -14,46 +14,8 @@
                     ...
                 </div>
                 <div class="pusher">
-                    <form class="ui form">
-                        <!--Pet type field - CAT or DOG-->
-                        <div class="field">
-                            <label>Pet type</label>
-                            <div class="ui selection dropdown" id="type-dropdown-field">
-                                <input type="hidden" name="pet-type">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Type</div>
-                                <div class="menu">
-                                    <div class="item" data-value="1">Cat</div>
-                                    <div class="item" data-value="0">Dog</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Enter animal breed-->
-                        <div class="field">
-                            <label>Breed</label>
-                            <input type="text" name="breed" placeholder="Golden Retriever">
-                        </div>
-                        <!--Enter zip code to find list of pets in your area.-->
-                        <div class="field">
-                            <label>Zip code</label>
-                            <input type="text" name="zip-code" placeholder="Zip Code">
-                        </div>
-                        <!--Select the gender of the pet that you want to search for-->
-                        <div class="field">
-                            <label>Gender</label>
-                            <div class="ui selection dropdown" id="gender-dropdown-field">
-                                <input type="hidden" name="gender">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Gender</div>
-                                <div class="menu">
-                                    <div class="item" data-value="1">Male</div>
-                                    <div class="item" data-value="0">Female</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Click search button to bring up search results-->
-                        <button class="ui button" type="submit" id="search-btn">SEARCH</button>
-                    </form>
+                    <!--Search form-->
+                     {{> pets/petsearch-form}} 
                 </div>
             </div>
 
