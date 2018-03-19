@@ -4,7 +4,7 @@ Pet adoption match app
 ## Running tests
 
 ### Getting started 
-To run one of the tests locally on your computer, perform the following steps:
+<p>To run one of the tests locally on your computer, perform the following steps</p>
 1. Change directory to the project root directory (PetMatch).
 
 2. Run the following command to make sure you have the testing dependencies (nightmare and mocha) available locally:
@@ -12,8 +12,8 @@ To run one of the tests locally on your computer, perform the following steps:
 
 3. Start the server.
 <pre>nodemon server.js</pre>
-If you don't have nodemon installed, you can also start the server using node:
-<pre>node server.js</p>
+<p>If you don't have nodemon installed, you can also start the server using node:</p>
+<pre>node server.js</pre>
 
 ### Troubleshooting
 * If a test does not pass...
