@@ -19,5 +19,11 @@ module.exports = function(app) {
     //HTML route for pet search page.
     app.get("/petsearch", function(req, res) {
         res.render("search");
-        });      
+        });    
+
+    app.get("/savedpets", function(req, res) {
+        res.render("savedpets");
+        });
+
+        
 }
