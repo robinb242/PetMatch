@@ -1,12 +1,22 @@
 //Pet type search field drop down
-$('#select')
+$('#pet-type-field')
   .dropdown()
 ;
 
 //Gender search field drop down
-$('#select2')
+$('#gender-field')
   .dropdown()
 ;
+
+//Create variables to hold user input from pet search form.
+var petTypeInput;
+var breedInput;
+var locationInput;
+var genderInput;
+
+//Construct query URL to get pet data from petfinder API.
+// var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
+
 
 //Create variable to hold count that will keep track of the index of the currently displayed pet.
 var searchCount = 0;
@@ -61,6 +71,28 @@ $("#search-btn").on("click", function() {
     event.preventDefault();
     //Set search count back to 0.
     searchCount = 0;
+    //Grab the user input from the form.
+    petTypeInput = $("#pet-type-field").val().trim().toLowerCase();
+    breedInput = $("#breed-field").val().trim().toLowerCase();
+    locationInput = $("#zip-code-field").val().trim().toLowerCase();
+    genderInput = $("#gender-field").val().trim().toLowerCase();
+
+    //Debug
+    console.log(petTypeInput);
+    console.log(breedInput);
+    console.log(locationInput);
+    console.log(genderInput);
+
+    // var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
+    // var queryURLBase2 = queryURLBase + petTypeInput + "&location=" + locationInput + "&sex=" + genderInput + "&breed=" + breedInput + "&f&format=json";
+    // console.log(queryURLBase2);
+
+    //Clear search fields after user clicks search.
+    $("#pet-type-field").val("");
+    $("#breed-field").val("");
+    $("#zip-code-field").val("");
+    $("#gender-field").val("");
+    
     //show search results.
     startSearch(); 
 });
