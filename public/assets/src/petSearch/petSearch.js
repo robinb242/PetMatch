@@ -67,34 +67,82 @@ $("#end-pet-search").hide();
 
 //When search button is clicked, display search results.
 $("#search-btn").on("click", function() {
-    //prevent form from submitting itself.
-    event.preventDefault();
-    //Set search count back to 0.
-    searchCount = 0;
-    //Grab the user input from the form.
-    petTypeInput = $("#pet-type-field").val().trim().toLowerCase();
-    breedInput = $("#breed-field").val().trim().toLowerCase();
-    locationInput = $("#zip-code-field").val().trim().toLowerCase();
-    genderInput = $("#gender-field").val().trim().toLowerCase();
+    //Form validation rules.
+    $('#pet-search-form')
+    .form({
+        fields: {
+        petType: {
+            identifier: 'pet-type',
+            rules: [
+            {
+                type   : 'empty',
+                prompt : 'Select a pet type.'
+            }
+            ]
+        },
+        breed: {
+            identifier: 'breed',
+            rules: [
+            {
+                type   : 'empty',
+                prompt : 'Enter a breed.'
+            }
+            ]
+        },
+        gender: {
+            identifier: 'gender',
+            rules: [
+            {
+                type   : 'empty',
+                prompt : 'Select a gender.'
+            }
+            ]
+        },
+        zipcode: {
+            identifier: 'zip-code',
+            rules: [
+            {
+                type   : 'empty',
+                prompt : 'Enter your zip code.'
+            }
+            ]
+        }
+        }
+    })
 
-    //Debug
-    console.log(petTypeInput);
-    console.log(breedInput);
-    console.log(locationInput);
-    console.log(genderInput);
-
-    // var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
-    // var queryURLBase2 = queryURLBase + petTypeInput + "&location=" + locationInput + "&sex=" + genderInput + "&breed=" + breedInput + "&f&format=json";
-    // console.log(queryURLBase2);
-
-    //Clear search fields after user clicks search.
-    $("#pet-type-field").val("");
-    $("#breed-field").val("");
-    $("#zip-code-field").val("");
-    $("#gender-field").val("");
+    //If form is valid, submit form and start search.
+    if ( $('#pet-search-form').form('is valid')) {
+        // form is valid 
     
-    //show search results.
-    startSearch(); 
+        //prevent form from submitting itself.
+        event.preventDefault();
+        //Set search count back to 0.
+        searchCount = 0;
+        //Grab the user input from the form.
+        petTypeInput = $("#pet-type-field").val().trim().toLowerCase();
+        breedInput = $("#breed-field").val().trim().toLowerCase();
+        locationInput = $("#zip-code-field").val().trim().toLowerCase();
+        genderInput = $("#gender-field").val().trim().toLowerCase();
+
+        //Debug
+        console.log(petTypeInput);
+        console.log(breedInput);
+        console.log(locationInput);
+        console.log(genderInput);
+
+        // var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
+        // var queryURLBase2 = queryURLBase + petTypeInput + "&location=" + locationInput + "&sex=" + genderInput + "&breed=" + breedInput + "&f&format=json";
+        // console.log(queryURLBase2);
+
+        //Clear search fields after user clicks search.
+        $("#pet-type-field").val("");
+        $("#breed-field").val("");
+        $("#zip-code-field").val("");
+        $("#gender-field").val("");
+        
+        //show search results.
+        startSearch(); 
+    }
 });
 
 
