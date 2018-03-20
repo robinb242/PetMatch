@@ -1,0 +1,37 @@
+<!--Pet search form-->
+<form class="ui form" id="pet-search-form">
+    <!--Pet type field - CAT or DOG-->
+    <div class="field">
+        <label>Pet type</label>
+        <select name="petType" class="ui dropdown" placeholder="Pet type" id="pet-type-field">
+            <option value="">Pet type</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
+    </div>
+
+    <!--Enter animal breed-->
+    <div class="field">
+        <label>Breed</label>
+        <input type="text" name="breed" placeholder="Golden Retriever" id="breed-field">
+    </div>
+
+    <!--Enter zip code to find list of pets in your area.-->
+    <div class="field">
+        <label>Zip code</label>
+        <input type="text" name="zipCode" placeholder="Zip Code" id="zip-code-field">
+    </div>
+
+    <!--Select the gender of the pet that you want to search for-->
+    <div class="field">
+        <label>Gender</label>
+        <select name="gender" class="ui dropdown" placeholder="Gender" id="gender-field">
+            <option value="">Gender</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+        </select>
+    </div>
+
+    <!--Click search button to bring up search results-->
+    <button class="ui pink button" type="submit" id="search-btn"><i class="search outline icon"></i> SEARCH</button>
+</form>

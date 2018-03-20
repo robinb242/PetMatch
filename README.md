@@ -1,6 +1,12 @@
 # PetMatch
 Pet adoption match app
 
+## About this project
+
+## Screenshots
+
+## Getting started
+
 ## Running tests
 
 ### Getting started 
@@ -62,9 +68,6 @@ If all checks pass, all pages load without error.
 ## Compatibility quiz questions
 * https://docs.google.com/document/d/1Mt60SJANtHSA12bLsydXwkYACuC0Fw9KfRVEErU-7yc/edit?usp=sharing
 
-## Testing Strategy
-TBD
-
 ## Git help
 * When you start coding
 <pre>git checkout -b branch_name --track origin/master</pre>
@@ -85,9 +88,9 @@ TBD
 * Weekdays after 5 p.m.
 * Meeting place: Robin’s house
 
-## Possible pet adoption APIs to use in app
+## About the Petfinder API
 * https://www.petfinder.com/developers/api-docs
-* https://rescuegroups.org/services/adoptable-pet-data-api/
+* https://github.com/helenuria/Petfinder-API
 
 ## Other pet matching apps
 * http://adopt.pawslikeme.com/
