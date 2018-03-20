@@ -4,7 +4,6 @@
   "description": "Pet adoption match page",
   "main": "server.js",
   "scripts": {
-    "test": "karma start",
     "test": "mocha"
   },
   "repository": {
@@ -20,6 +19,7 @@
   "homepage": "https://github.com/robinb242/PetMatch#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors-anywhere": "^0.4.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",

@@ -29,3 +29,8 @@
 #match-rating-btn {
   margin-top: 30px;
 }
+
+/* Pet profile card */
+.search-card {
+  margin-left: 40px !important;
+}
