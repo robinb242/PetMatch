@@ -177,7 +177,29 @@ function findMatch() {
         ]
 
         console.log(userQuizValues);
-        
+
+        // $.post("/api/new", userQuizValues)
+        $.post("/api/new", userQuizValues[0])
+            .then(function (data) {
+               
+                console.log("this is your data!!!!    " + data);
+                alert("Adding info...");
+            });
+
+        $.get("/api/", function (data) {
+            console.log("This is your Data: " + data + "is the best match");
+
+            if (data) {
+                // $("#stats").show();
+                $("#thePet").text(data);
+                // $("#displaypic").text(data);
+
+
+            }
+            else {
+                $("#match-results-modal").text("sorry, no match has been found, you will continue to be lonely")
+            }
+        });
         //Send the POST request using ajax.
         // $.ajax("/api/new", {
         //     type: "POST",
