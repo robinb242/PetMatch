@@ -26,7 +26,7 @@ var createRow = function(data) {
       var petName = $("<#pet-name").text(response.Name);
       var petAge = $("#pet-age").text(response.Age);
       var petCity = $("#pet-city").text(response.City);
-       var petTrained = $("#pet-trained").text(response.Trained);
+      var petTrained = $("#pet-trained").text(response.Trained);
 
       // Append the newly created table data to the table row
       tRow.append(petName, petAge, petCity, petTrained);
