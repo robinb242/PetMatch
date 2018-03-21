@@ -32,7 +32,7 @@ var Animal_traits = sequelize.define("animal_traits", {
      trait_clean: {
       type: DataTypes.INTEGER
     },
-      trait_unconverntional: {
+      trait_unconventional: {
       type: DataTypes.BOOLEAN
     }
 
