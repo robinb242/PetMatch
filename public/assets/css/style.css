@@ -2,7 +2,7 @@
 /*Background image*/
 body {
   background-image: url('/assets/img/paw-print.jpg');
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
 }
 
@@ -60,11 +60,6 @@ label {
 /* Rate this match button on match results modal*/
 #match-rating-btn {
   margin-top: 30px;
-}
-
-/* Pet profile card */
-.search-card {
-  margin-left: 40px !important;
 }
 
 /*footer styling*/
