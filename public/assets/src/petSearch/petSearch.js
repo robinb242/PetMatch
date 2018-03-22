@@ -12,9 +12,6 @@ $('#gender-field')
 var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
 var queryURLBase2;
 
-//Create variable to hold count that will keep track of the index of the currently displayed pet.
-var searchCount = 0;
-
 //Create variable for "New search" button so that we can create it using jQuery.
 var newSearchBtn;
 
@@ -24,44 +21,13 @@ var likeBtn;
 //Create variable for DISLIKE button so that we can create it using jQuery.
 var dislikeBtn;
 
-//Create variable to hold all search results.
-var searchResults = {
-    searchArray: [{
-        name: "Sparky",
-        age: 2,
-        city: "Lakeville",
-        trained: "Yes",
-        img: "http://photos.petfinder.com/photos/pets/40945352/2/?bust=1518568112&width=300&-pn.jpg"
-        }, {
-        name: "Friday",
-        age: 4,
-        city: "Burnsville",
-        trained: "Yes",
-        img:"http://photos.petfinder.com/photos/pets/41070765/3/?bust=1519863195&width=500&-x.jpg"
-        }, {
-        name: "Millie",
-        age: 5,
-        city: "Minneapolis",
-        trained: "No",
-        img:"http://photos.petfinder.com/photos/pets/40584159/1/?bust=1515099831&width=300&-pn.jpg"
-        }, {
-        name: "Prince",
-        age: 7,
-        city: "St. Paul",
-        trained: "No",
-        img:"http://photos.petfinder.com/photos/pets/41194913/2/?bust=1521230864&width=300&-pn.jpg"
-        }]
-};
-
 //Hide search results until user clicks search
 $(".search-card").hide();
-
-//Hide end-pet-search div.
-$("#end-pet-search").hide();
 
 //When search button is clicked, display search results.
 $("#search-btn").on("click", function() {
     //Form validation rules.
+    //All fields are required.
     //Form validation: https://semantic-ui.com/behaviors/form.html
     $('#pet-search-form')
     .form({
@@ -101,6 +67,15 @@ $("#search-btn").on("click", function() {
                 prompt : 'Enter your zip code.'
             }
             ]
+        },
+        petAge: {
+            identifier: 'petAge',
+            rules: [
+            {
+                type   : 'empty',
+                prompt : 'Select an age group.'
+            }
+            ]
         }
         }
     })
@@ -111,46 +86,24 @@ $("#search-btn").on("click", function() {
     
         //prevent form from submitting itself.
         event.preventDefault();
-        //Set search count back to 0.
-        searchCount = 0;
+
+        //Clear previous search results from search results section (if any).
+        $("#search-results").empty();
+
         //Grab the user input from the form fields.
         var
             $form = $('#pet-search-form'),
-            //get all values
+            //get all values from form.
             allFields = $form.form('get values')
         ;
             console.log(allFields);
 
         //Query URL construction.
-        queryURLBase2 = queryURLBase + allFields.petType + "&location=" + allFields.zipCode + "&sex=" + allFields.gender + "&breed=" + allFields.breed + "&f&format=json&callback=?";
+        queryURLBase2 = queryURLBase + allFields.petType + "&location=" + allFields.zipCode + "&sex=" + allFields.gender + "&breed=" + allFields.breed + "&age=" + allFields.petAge + "&f&format=json&callback=?";
         console.log(queryURLBase2);
 
         //Clear search fields after user clicks search.
         $('form').form('clear')
-
-        //Hide pet search form.
-        $("#pet-search-form").hide();
-        //Create "New search" button and append to search results page.
-        newSearchBtn = $("<button>");
-        newSearchBtn.addClass("ui pink button").text("New search");
-        $("#header").append(newSearchBtn);
-        //When you click the new search button, app should go display the search form again.
-        $(newSearchBtn).on("click", function() {
-            //Show pet search form.
-            $("#pet-search-form").show();
-            //Hide new search button.
-            $(newSearchBtn).hide();
-            //Hide pet profile card.
-            $(".search-card").hide();
-            //Remove pet search image, details, and buttons.
-            $("#pet-search-image").hide();
-            $(likeBtn).remove();
-            $(dislikeBtn).remove();
-            $("#pet-name").empty();
-            $("#pet-age").empty();
-            $("#pet-city").empty();
-            $("#pet-trained").empty();
-        });
         
         //show search results.
         startSearchRequest(queryURLBase2); 
@@ -168,39 +121,93 @@ function startSearchRequest(queryURL) {
         //Example of how to retrieve a specific pet's age:
         //console.log(petData.petfinder.pets.pet[0].age.$t)
 
-    
-    //Show pet profile card and image when user clicks search.
-    $(".search-card").show();
-    $("#pet-search-image").show();
-    //Display pet details based on the current count. Count starts at 0.
-    $('#pet-search-photo').attr("src", petData.petfinder.pets.pet[searchCount].media.photos.photo[2].$t);
-    $("#pet-name").append("Name: " + petData.petfinder.pets.pet[searchCount].name.$t);
-    $("#pet-age").append("Age: " + petData.petfinder.pets.pet[searchCount].age.$t);
-    $("#pet-city").append("Shelter: " + petData.petfinder.pets.pet[searchCount].shelterId.$t);
-    $("#pet-trained").append("Description: " + petData.petfinder.pets.pet[searchCount].description.$t);
-    //Create buttons (likeBtn, dislikeBtn).
-    likeBtn = $("<button>");
-    dislikeBtn = $("<button>");
-    //Add semantic UI styling to the buttons.
-    likeBtn.addClass("ui pink button likeBtn");
-    dislikeBtn.addClass("ui teal button dislikeBtn")
-    //Give each button a data attribute called data-choice.
-    likeBtn.attr("data-choice", searchResults.searchArray[searchCount].name);
-    //Then give each button text.
-    dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
-    likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
-    //Append likeBtn to like-btn-span so that it appears in card.
-    $("#like-btn-span").append(likeBtn);
-    //Append dislikeBtn to dislike-btn-span so that it appears in card.
-    $("#dislike-btn-span").append(dislikeBtn);
-    //When user clicks the likeBtn, go to next pet in search results (if there are any left).
-    $(likeBtn).on("click", function() {
-        nextPet();
-    });
-    //When user clicks the dislikeBtn, go to the next pet in search results (if there are any left).
-    $(dislikeBtn).on("click", function() {
-        nextPet();
-    });
+        //Display number of matches/search results returned from petfinder API to user.
+        var numberMatches = $("<h1>");
+        numberMatches.attr("id", "number-matches");
+        numberMatches.append("Your matches");
+        $("#search-results").append(numberMatches);
+
+        for (var i = 0; i < petData.petfinder.pets.pet.length; i++) {
+        //Show pet profile card and image when user clicks search.
+        $(".search-card").show();
+        // $("#pet-search-image").show();
+        //Create a div for each pet returned from the petfinder API.
+        var petProfile = $("<div>");
+        //Create a card for each pet returned from the petfinder API.
+        petProfile.addClass("ui card fluid search-card");
+        //Append each pet profile to the search results section of the search page.
+        $("#search-results").append(petProfile);
+        // likeBtnDiv = $("<div>")
+        // likeBtnDiv.addClass("extra content").atrr("id", "pet-search-buttons");
+        // dislikeBtnSpan = $("<span>");
+        // dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
+        // var likeBtnSpan = $("<span>");
+        // likeBtnSpan.addClass("right floated star").attr("id", "dislike-btn-span");
+        // likeBtnDiv.append(likeBtnSpan).append(dislikeBtnSpan);
+        // petProfile.append(likeBtnDiv);
+
+        //Create a div to hold information about each pet, such as name, age, location, and description.
+        var petDetailsDiv = $("<div>");
+        petDetailsDiv.addClass("content").attr("id", "pet-search-details-" + i);
+
+        //Append the pet information to the pet profile for each pet.
+        petProfile.append(petDetailsDiv);
+
+        //pet name.
+        var petName = $("<h4>")
+        petName.attr("id", "pet-name");
+
+        //pet age.
+        var petAge = $("<h4>");
+        petAge.attr("id", "pet-age");
+
+        //pet location/shelter id.
+        var petLocation = $("<h4>");
+        petLocation.attr("id", "pet-city");
+
+        //pet description.
+        var petDescription = $("<h4>");
+        petDescription.attr("id", "pet-trained");
+
+        //Shelter contact info
+        var shelterEmail = $("<h4>");
+        shelterEmail.attr("id", "shelter-email");
+
+        //pet photo
+        //petPhoto.attr("src", petData.petfinder.pets.pet[i].media.photos.photo[2].$t);
+
+        //Grab the pet name, age, location, and description data from the petfinder API.
+        petName.append("Name: " + petData.petfinder.pets.pet[i].name.$t);
+        petAge.append("Age: " + petData.petfinder.pets.pet[i].age.$t);
+        petLocation.append("Shelter: " + petData.petfinder.pets.pet[i].shelterId.$t);
+        shelterEmail.append("Shelter contact information: " + petData.petfinder.pets.pet[i].contact.email.$t);
+        petDescription.append("Description: " + petData.petfinder.pets.pet[i].description.$t);
+        petDetailsDiv.append(petName).append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
+
+        // //Create buttons (likeBtn, dislikeBtn).
+        // likeBtn = $("<button>");
+        // dislikeBtn = $("<button>");
+        // //Add semantic UI styling to the buttons.
+        // likeBtn.addClass("ui pink button likeBtn");
+        // dislikeBtn.addClass("ui teal button dislikeBtn")
+        // //Give each button a data attribute called data-choice.
+        // likeBtn.attr("data-choice", searchResults.searchArray[searchCount].name);
+        // //Then give each button text.
+        // dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
+        // likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
+        // //Append likeBtn to like-btn-span so that it appears in card.
+        // likeBtnSpan.append(likeBtn);
+        // //Append dislikeBtn to dislike-btn-span so that it appears in card.
+        // dislikeBtnSpan.append(dislikeBtn);
+        //When user clicks the likeBtn, go to next pet in search results (if there are any left).
+        // $(likeBtn).on("click", function() {
+        //     nextPet();
+        // });
+        // //When user clicks the dislikeBtn, go to the next pet in search results (if there are any left).
+        // $(dislikeBtn).on("click", function() {
+        //     nextPet();
+        // });
+    }
 });
 }
 
@@ -240,11 +247,3 @@ function endSearch() {
     //Tell user there are no more pets for this search.
     $("#end-pet-search").show();
 }
-
-
-
-
-
-
-
-

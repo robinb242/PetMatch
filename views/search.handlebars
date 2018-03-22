@@ -9,7 +9,7 @@
     <div class="ui stackable two column grid main-content-section">
         <div class="stretched row">
             <!--Pet search form-->
-            <div class="seven wide column">					
+            <div class="four wide column">					
                 <div class="ui sidebar">
                     ...
                 </div>
@@ -25,29 +25,9 @@
             </div>
 
             <!--Pet search results section-->
-            <div class="nide wide column">
-                <div class="ui card fluid search-card">
-                    <!--LIKE and DISLIKE buttons go here.-->
-                    <div class="extra content" id="pet-search-buttons">
-                        <span class="left floated like" id="dislike-btn-span">           
-                        </span>
-                        <span class="right floated star" id="like-btn-span">
-                        </span>
-                    </div>
-                    <!--Pet search details go here-->
-                    <div class="content" id="pet-search-details">
-                        <h4 id="pet-name"></h4>
-                        <h4 id="pet-age"></h4>
-                        <h4 id="pet-city"></h4>
-                        <h4 id="pet-trained"></h4>
-                    </div>
-                    <!--Only display this div if there are no more search results to display to the user.-->
-                    <div class="content center aligned" id="end-pet-search">
-                        <h4>No more pets are available for this search.</h4>
-                        <h4>To see all the pets you LIKED, click <b>Saved pets</b> from the menu.</h4>
-                        <h4>To start a new search, enter the new pet details in the search form.</h4>
-                    </div>
-                </div>
+            <div class="twelve wide column" id="search-results">
+                <!--Dynamically create pet profile div for each pet returned from the petfinder API-->
+                <!--Display results here-->
             </div>
         </div>
     </div>
@@ -56,3 +36,4 @@
 <!--Footer-->
 <!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
 {{> pets/footer-block}} 
+
