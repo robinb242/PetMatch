@@ -7,7 +7,7 @@ var User_answers = sequelize.define("user_answers", {
     user_zip: {
       type: DataTypes.INTEGER
     },
-    trait_kids {
+    trait_kids: {
     	type: DataTypes.BOOLEAN
     }, 
     trait_security: {
