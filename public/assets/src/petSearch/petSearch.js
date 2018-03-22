@@ -137,14 +137,34 @@ function startSearchRequest(queryURL) {
         petProfile.addClass("ui card fluid search-card");
         //Append each pet profile to the search results section of the search page.
         $("#search-results").append(petProfile);
-        // likeBtnDiv = $("<div>")
-        // likeBtnDiv.addClass("extra content").atrr("id", "pet-search-buttons");
-        // dislikeBtnSpan = $("<span>");
-        // dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
-        // var likeBtnSpan = $("<span>");
-        // likeBtnSpan.addClass("right floated star").attr("id", "dislike-btn-span");
-        // likeBtnDiv.append(likeBtnSpan).append(dislikeBtnSpan);
-        // petProfile.append(likeBtnDiv);
+        //Dynamically create like and not interested buttons at top of each pet profile card.
+        likeBtnDiv = $("<div>")
+        //Create div inside of the pet profile card to hold the buttons.
+        likeBtnDiv.addClass("extra content").attr("id", "pet-search-buttons");
+        //Create span element to hold the dislike button.
+        dislikeBtnSpan = $("<span>");
+        dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
+        //Create span element to hold the like button.
+        var likeBtnSpan = $("<span>");
+        likeBtnSpan.addClass("right floated star").attr("id", "dislike-btn-span");
+        //Append the like buttons and not interested buttons to the pet profile card.
+        likeBtnDiv.append(likeBtnSpan).append(dislikeBtnSpan);
+        petProfile.append(likeBtnDiv);
+       // Create buttons (likeBtn, dislikeBtn).
+        likeBtn = $("<button>");
+        dislikeBtn = $("<button>");
+        //Add semantic UI styling to the buttons.
+        likeBtn.addClass("ui pink button likeBtn");
+        dislikeBtn.addClass("ui teal button dislikeBtn")
+        //Give each button a data attribute called data-choice.
+        likeBtn.attr("data-choice", petData.petfinder.pets.pet[i].name.$t);
+        //Then give each button text.
+        dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
+        likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
+        //Append likeBtn to like-btn-span so that it appears in card.
+        likeBtnSpan.append(likeBtn);
+        //Append dislikeBtn to dislike-btn-span so that it appears in card.
+        dislikeBtnSpan.append(dislikeBtn);
 
         //Create a div to hold information about each pet, such as name, age, location, and description.
         var petDetailsDiv = $("<div>");
@@ -184,21 +204,6 @@ function startSearchRequest(queryURL) {
         petDescription.append("Description: " + petData.petfinder.pets.pet[i].description.$t);
         petDetailsDiv.append(petName).append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
 
-        // //Create buttons (likeBtn, dislikeBtn).
-        // likeBtn = $("<button>");
-        // dislikeBtn = $("<button>");
-        // //Add semantic UI styling to the buttons.
-        // likeBtn.addClass("ui pink button likeBtn");
-        // dislikeBtn.addClass("ui teal button dislikeBtn")
-        // //Give each button a data attribute called data-choice.
-        // likeBtn.attr("data-choice", searchResults.searchArray[searchCount].name);
-        // //Then give each button text.
-        // dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
-        // likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
-        // //Append likeBtn to like-btn-span so that it appears in card.
-        // likeBtnSpan.append(likeBtn);
-        // //Append dislikeBtn to dislike-btn-span so that it appears in card.
-        // dislikeBtnSpan.append(dislikeBtn);
         //When user clicks the likeBtn, go to next pet in search results (if there are any left).
         // $(likeBtn).on("click", function() {
         //     nextPet();

@@ -24,7 +24,7 @@ body {
 }
 
 /*Styling for card headers on home page */
-.home-page-header {
+.home-page-header, #pet-search-buttons {
   background-color: #024699 !important;
   padding: 15px !important;
   color: white !important;
