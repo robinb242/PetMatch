@@ -1,14 +1,29 @@
 <!-- html output of search results -->
 <!--Navbar. With semantic UI, navbar is just called a menu.-->
 {{> pets/navbar-block}}  
-<div class="ui container">  
+ <div class="ui container"> 
 
     <!--Header row-->
     <div id="header">
-        <h2>Saved Pets<h2>
+        <h1>My saved pets<h1>
     </div>
 
-    
+    <div class="ui two column grid main-content-section">
+        <!--User has two options. They can either...
+            take a compatability quiz or go straight to search page.-->
+        <div class="row">
+            <div class="column">					
+                <div class="ui fluid card">
+                    <div class="header home-page-header center aligned">
+                        <h2>Liked pets</h2>
+                    </div>
+                    <div class="content center aligned">
+                        {{> pets/pets-liked}}
+                    </div>
+                </div>
+                            
+        </div>
+    </div>
 </div>
 <!--Footer-->
 <!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->

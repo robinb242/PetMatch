@@ -204,51 +204,69 @@ function startSearchRequest(queryURL) {
         petDescription.append("Description: " + petData.petfinder.pets.pet[i].description.$t);
         petDetailsDiv.append(petName).append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
 
-        //When user clicks the likeBtn, go to next pet in search results (if there are any left).
-        // $(likeBtn).on("click", function() {
-        //     nextPet();
-        // });
-        // //When user clicks the dislikeBtn, go to the next pet in search results (if there are any left).
-        // $(dislikeBtn).on("click", function() {
-        //     nextPet();
-        // });
+        //Click event for liking a pet.
+        $(likeBtn).on("click", function() {
+            console.log("liked button clicked");
+            var newLike = $(this).data("newlike");
+            //Grab pet name
+            //When user likes a pet, set liked state to true
+            var newPet = {
+                pet_name: $(this).data('choice'),
+                liked: true
+            };
+
+            console.log(newPet);
+
+            // Send the POST request using ajax.
+            $.ajax("/api/pets", {
+                type: "POST",
+                data: newPet
+            }).then(
+            function() {
+                console.log("added pet");
+                // Reload the page to get the updated list
+                //location.reload();
+            });
+        });
     }
 });
 }
 
 //When user clicks Like button, go to the next pet.
-function nextPet() {
-	//Increment the search count by 1
-    searchCount++
-    //Remove previous pet from HTML before going onto the next pet in the search results.
-    $(".search-card").hide();
-    //Remove buttons from previous pet from HTML.
-    $("#like-btn-span").empty();
-    $("#dislike-btn-span").empty();
-    //Remove pet search details from previous pet from HTML.
-    $("#pet-name").empty();
-    $("#pet-age").empty();
-    $("#pet-trained").empty();
-    $("#pet-city").empty();
-    //If user reaches the max number of search results available, tell user no more available pets.
-    if (searchCount === petData.petfinder.pets.length) {
-        endSearch();
-    }
+// function nextPet() {
+// 	//Increment the search count by 1
+//     searchCount++
+//     //Remove previous pet from HTML before going onto the next pet in the search results.
+//     $(".search-card").hide();
+//     //Remove buttons from previous pet from HTML.
+//     $("#like-btn-span").empty();
+//     $("#dislike-btn-span").empty();
+//     //Remove pet search details from previous pet from HTML.
+//     $("#pet-name").empty();
+//     $("#pet-age").empty();
+//     $("#pet-trained").empty();
+//     $("#pet-city").empty();
+//     //If user reaches the max number of search results available, tell user no more available pets.
+//     if (searchCount === petData.petfinder.pets.length) {
+//         endSearch();
+//     }
 
-    //else, if there are still pets left, go to next pet.
-    else {
-        startSearchRequest();
-    }
-}
+//     //else, if there are still pets left, go to next pet.
+//     else {
+//         startSearchRequest();
+//     }
+// }
 
-//If there are no more available pets for the current search, end search.
-function endSearch() {
-    //Show search card.
-    $(".search-card").show();
-    //Remove pet search image, details, and buttons.
-    $("#pet-search-image").hide();
-    $("#pet-search-buttons").hide();
-    $("#pet-search-details").hide();
-    //Tell user there are no more pets for this search.
-    $("#end-pet-search").show();
-}
+// //If there are no more available pets for the current search, end search.
+// function endSearch() {
+//     //Show search card.
+//     $(".search-card").show();
+//     //Remove pet search image, details, and buttons.
+//     $("#pet-search-image").hide();
+//     $("#pet-search-buttons").hide();
+//     $("#pet-search-details").hide();
+//     //Tell user there are no more pets for this search.
+//     $("#end-pet-search").show();
+// }
+
+
