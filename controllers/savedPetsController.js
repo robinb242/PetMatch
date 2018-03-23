@@ -35,4 +35,15 @@ module.exports = function(app) {
         res.end();
     });
     });
+
+    //DELETE route to remove pet from liked pets list.
+    app.delete("/api/pets/:id", function(req, res) {
+        db.Pet.destroy ({
+        where: {
+            id: req.params.id
+        }
+        }).then(function(result){
+        res.end();
+        });   
+    });
 }

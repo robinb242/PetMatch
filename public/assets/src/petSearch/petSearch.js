@@ -228,6 +228,22 @@ function startSearchRequest(queryURL) {
                 //location.reload();
             });
         });
+
+        //Click event to remove a pet from liked pets list.
+        $(".delete-pet").on("click", function(event) {
+            var id = $(this).data("id");
+        
+            // Send the DELETE request using ajax.
+            $.ajax("/api/pets/" + id, {
+            type: "DELETE",
+            }).then(
+            function() {
+                console.log("removed pet", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+            );
+        });
     }
 });
 }
