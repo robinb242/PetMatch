@@ -1,10 +1,11 @@
 {
-  "name": "PetMatch",
+  "name": "petmatch",
   "version": "1.0.0",
   "description": "Pet adoption match page",
   "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
