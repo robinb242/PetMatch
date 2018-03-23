@@ -13,7 +13,7 @@ body {
 }
 
 /*Have consistent color for buttons throughout the UI.*/
-#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, #quiz-progress-bar {
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, {
   background-color: #024699 !important;
   color: white !important;
 }
@@ -24,10 +24,15 @@ body {
 }
 
 /*Styling for card headers on home page */
-.home-page-header, #pet-search-buttons {
+.home-page-header, #pet-search-buttons, #quiz-header {
   background-color: #024699 !important;
   padding: 15px !important;
   color: white !important;
+}
+
+/*Quiz instructions*/
+#quiz-instructions {
+  font-size: 24px !important;
 }
 
 /*Add margin in between the home page main content section and the top navigation bar */
