@@ -2,7 +2,7 @@
 /*Background image*/
 /*Stack overflow: https://css-tricks.com/perfect-full-page-background-image/*/
 body {
-  background-image: url('/assets/img/background.jpg');
+  background-image: url('/assets/img/background.jpg') !important;
   background-repeat: no-repeat; 
   background-size: cover;
   -webkit-background-size: cover;
@@ -12,7 +12,7 @@ body {
   width: 100%;
 }
 html {
-  background: url('assets/img/background.jpg') no-repeat center center fixed;
+  background: url('assets/img/background.jpg') no-repeat center center fixed !important;
   background-size: cover;
   height: 100%;
   overflow: hidden;
