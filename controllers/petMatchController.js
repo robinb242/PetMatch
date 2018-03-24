@@ -33,8 +33,8 @@ module.exports = function(app) {
     //HTML route for pet search page.
     app.get("/petsearch", function(req, res) {
         res.render("search");
-        });    
-
+        });  
+        
     app.get("/api", function (req, res) {
         // console.log("TESTER!!!!" + myPet[0] + myPet[1]);
         res.json(myPet);

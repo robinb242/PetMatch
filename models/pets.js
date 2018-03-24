@@ -4,6 +4,13 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        pet_shelter: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pet_email: {
+            type: DataTypes.STRING
+        },
         liked: {
             type: DataTypes.BOOLEAN
         }
@@ -11,4 +18,4 @@ module.exports = function(sequelize, DataTypes) {
     return Pet;
   }
 
-  //test
+  

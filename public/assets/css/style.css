@@ -13,7 +13,7 @@ body {
 }
 
 /*Have consistent color for buttons throughout the UI.*/
-#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet {
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close {
   background-color: #024699 !important;
   color: white !important;
 }
@@ -83,7 +83,7 @@ label {
   margin-top: 30px;
 }
 
-/*Name of liked pet in the liked pets list */
-.liked-pet-name {
-  font-size: 20px !important;
+/* Pet details in the liked pets list */
+.liked-pet-details, .pet-match-results {
+  font-size: 18px !important;
 }
