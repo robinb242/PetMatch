@@ -2,27 +2,15 @@
 <!--Navbar. With semantic UI, navbar is just called a menu.-->
 {{> pets/navbar-block}}  
  <div class="ui container"> 
-
-    <!--Header row-->
-    <div id="header">
-        <h1>My saved pets<h1>
-    </div>
-
-    <div class="ui two column grid stackable main-content-section">
+    <div class="ui two column grid stackable main-content-section center aligned">
+        <!--Header row-->
+        <div id="header">
+            <h1>My saved pets<h1>
+        </div>
         <!--User has two options. They can either...
             take a compatability quiz or go straight to search page.-->
         <div class="row">
-            <div class="eight wide column">					
-                <div class="ui fluid card">
-                    <div class="header home-page-header">
-                        <h2>Liked pets list</h2>
-                    </div>
-                    <div class="content">
-                        {{> pets/pets-liked}}
-                    </div>
-                </div>                     
-            </div>
-            <div class="eight wide column">					
+             <div class="eight wide column">	
                 <div class="ui fluid card">
                     <div class="header home-page-header">
                         <h2>Pet compatibility assessment results</h2>
@@ -31,6 +19,14 @@
                             <div class="pet-match-results">
                                 <p class="pet-match-results" id="saved-quiz-results"></p>
                             </div>
+                    </div>
+                </div>				
+                <div class="ui fluid card" id="liked-pets-card">
+                    <div class="header home-page-header">
+                        <h2>Liked pets list</h2>
+                    </div>
+                    <div class="content">
+                        {{> pets/pets-liked}}
                     </div>
                 </div>                     
             </div>
