@@ -29,6 +29,11 @@ module.exports = function(app) {
     app.get("/quiz", function(req, res) {
         res.render("quiz");
         });
+
+    //HTML route for authentication screen.
+    app.get("/login", function(req, res) {
+        res.render("authentication");
+        });
     
     //HTML route for pet search page.
     app.get("/petsearch", function(req, res) {

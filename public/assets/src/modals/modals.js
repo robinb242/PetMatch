@@ -18,3 +18,10 @@ $("#help-modal-link").on("click", function() {
     .modal('show')
   ;
 });
+
+//Opens the logout modal from the hamburger menu.
+$("#logout-modal-link").on("click", function() {
+  $('#logout-modal')
+    .modal('show')
+  ;
+});

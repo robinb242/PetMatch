@@ -1,0 +1,56 @@
+
+<!--Navbar. With semantic UI, navbar is just called a menu.-->
+<div class="ui stackable inverted menu app-navbar">
+    <div class="ui container">
+        <!--Logo/Name plate goes here.-->
+        <div class="header item">
+            <h1><i class="fas fa-paw"></i> AdoptMe</h1>
+        </div>
+        <div class="ui simple dropdown right item">
+            More
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" id="about-modal-link"><i class="info cirle icon"></i>About</a>
+                <a class="item" id="contact-modal-link"><i class="envelope outline icon"></i>  Contact</a>
+                <a class="item" id="help-modal-link"><i class="question circle icon"></i>Help</a>
+                <a class="item" href="https://github.com/robinb242/PetMatch" target="_blank"><i class="github icon"></i>GitHub repo (for developers)</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="ui container"> 
+
+    <div class="ui two column grid main-content-section center aligned">
+        <!--Header row-->
+        <div id="header">
+            <h1 class="center aligned">Find your next companion<h1>
+        </div>
+        <div class="row">
+            <div class="column center aligned">					
+                <div class="ui fluid card center aligned">
+                    <div class="header home-page-header center aligned">
+                        <h2>Looking for the perfect pet?</h2>
+                    </div>
+                    <div class="content center aligned">
+                        <h3>ADOPT your next pet today!</h3>
+                        <h3>LOG IN with your Facebook account or create a new account.</h3>
+                        {{> pets/facebook-auth}} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Footer-->
+<!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
+{{> pets/footer-block}} 
+
+<!--Opens the About modal in the hamburger menu-->
+{{> modals/about-modal}} 
+
+<!--Opens the Contact modal in the hamburger menu-->
+{{> modals/contact-modal}}
+
+<!--Opens the Help modal in the hamburger menu-->
+{{> modals/help-modal}}
