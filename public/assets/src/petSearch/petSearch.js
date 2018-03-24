@@ -1,19 +1,16 @@
 //Pet type search field drop down
-$('#pet-type-field')
-  .dropdown()
-;
+// $('#pet-type-field') 
+//   .dropdown();
 
-//Gender search field drop down
-$('#gender-field')
-  .dropdown()
-;
+
+// //Gender search field drop down
+// $('#gender-field')
+//   .dropdown()
+// ;
 
 //Construct query URL to get pet data from petfinder API.
 var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
 var queryURLBase2;
-
-//Create variable for "New search" button so that we can create it using jQuery.
-var newSearchBtn;
 
 //Create variable for LIKE button so that we can create it using jQuery.
 var likeBtn;
@@ -142,29 +139,29 @@ function startSearchRequest(queryURL) {
         //Create div inside of the pet profile card to hold the buttons.
         likeBtnDiv.addClass("extra content").attr("id", "pet-search-buttons");
         //Create span element to hold the dislike button.
-        dislikeBtnSpan = $("<span>");
-        dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
+        // dislikeBtnSpan = $("<span>");
+        // dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
         //Create span element to hold the like button.
         var likeBtnSpan = $("<span>");
         likeBtnSpan.addClass("right floated star").attr("id", "dislike-btn-span");
         //Append the like buttons and not interested buttons to the pet profile card.
-        likeBtnDiv.append(likeBtnSpan).append(dislikeBtnSpan);
+        likeBtnDiv.append(likeBtnSpan);
         petProfile.append(likeBtnDiv);
        // Create buttons (likeBtn, dislikeBtn).
         likeBtn = $("<button>");
-        dislikeBtn = $("<button>");
+        // dislikeBtn = $("<button>");
         //Add semantic UI styling to the buttons.
         likeBtn.addClass("ui pink button likeBtn");
-        dislikeBtn.addClass("ui teal button dislikeBtn")
+        // dislikeBtn.addClass("ui teal button dislikeBtn")
         //Give each button a data attribute called data-choice.
         likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t);
         //Then give each button text.
-        dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
+        // dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
         likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
         //Append likeBtn to like-btn-span so that it appears in card.
         likeBtnSpan.append(likeBtn);
         //Append dislikeBtn to dislike-btn-span so that it appears in card.
-        dislikeBtnSpan.append(dislikeBtn);
+        // dislikeBtnSpan.append(dislikeBtn);
 
         //Create a div to hold information about each pet, such as name, age, location, and description.
         var petDetailsDiv = $("<div>");
@@ -232,21 +229,21 @@ function startSearchRequest(queryURL) {
         });
 
         //Click event to remove a pet from liked pets list.
-        $(".delete-pet").on("click", function(event) {
-            console.log("delete button clicked");
-            var id = $(this).data("id");
+        // $(".delete-pet").on("click", function(event) {
+        //     console.log("delete button clicked");
+        //     var id = $(this).data("id");
         
-            // Send the DELETE request using ajax.
-            $.ajax("/api/pets/" + id, {
-            type: "DELETE",
-            }).then(
-            function() {
-                console.log("removed pet", id);
-                // Reload the page to get the updated list
-                location.reload();
-            }
-            );
-        });
+        //     // Send the DELETE request using ajax.
+        //     $.ajax("/api/pets/" + id, {
+        //     type: "DELETE",
+        //     }).then(
+        //     function() {
+        //         console.log("removed pet", id);
+        //         // Reload the page to get the updated list
+        //         location.reload();
+        //     }
+        //     );
+        // });
     }
 });
 }

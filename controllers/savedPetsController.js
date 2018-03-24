@@ -21,32 +21,29 @@ module.exports = function(app) {
         }); 
     }); 
 
-    // //GET route to get pet quiz results from database.
-    // app.get("/savedpets", function(req, res) {
-    //     db.Match.findAll({}).then(function(matchResults) {
-    //     console.log(matchResults);
-    //     res.render("savedpets", {
-    //         matches: matchResults,
-    //     });
-    //     }).catch(function(err){
-    //     console.log(err);
-    //     }); 
-    // }); 
+
+    //GET route to get pet quiz results from database.
+    app.get("/api/matches", function(req, res) {
+        db.Match.findAll({}).then(function(matchResults) {
+        console.log(matchResults);
+        res.json(matchResults);
+        }); 
+    }); 
     
     //POST route to add match results to the database.
-    // app.post("/api/matches", function(req, res) {
-    //     console.log("Match Data:");
-    //     console.log(req.body);
-    //     console.log("Pet match: " + req.body.pet_match);
-    //     db.Match.create({
-    //         pet_match: req.body.pet_match,
-    //         pet_rating: 1
-    // }).then(function(results) {
-    //     console.log(results);
-    //     //results here would be the newly created pet
-    //     res.end();
-    // });
-    // });
+    app.post("/api/matches", function(req, res) {
+        console.log("Match Data:");
+        console.log(req.body);
+        console.log("Pet match: " + req.body.pet_match);
+        db.Match.create({
+            pet_match: req.body.pet_match,
+            pet_rating: 1
+    }).then(function(matchResults) {
+        console.log(matchResults);
+        //results here would be the newly created pet
+        res.json(matchResults);
+    });
+    });
 
     //POST route to create/add a pet to the database.
     app.post("/api/pets", function(req, res) {
@@ -72,7 +69,7 @@ module.exports = function(app) {
             id: req.params.id
         }
         }).then(function(result){
-        res.end();
+        res.json(result);
         });   
     });
 }
