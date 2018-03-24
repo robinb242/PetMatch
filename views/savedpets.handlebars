@@ -1,17 +1,51 @@
 <!-- html output of search results -->
-
-<div class="ui container">
-    <!--Navbar. With semantic UI, navbar is just called a menu.-->
-    {{> pets/navbar-block}}    
+<!--Navbar. With semantic UI, navbar is just called a menu.-->
+{{> pets/navbar-block}}  
+ <div class="ui container"> 
 
     <!--Header row-->
     <div id="header">
-        <h2>Saved Pets<h2>
+        <h1>My saved pets<h1>
     </div>
 
-    
-
-    <!--Footer-->
-    <!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
-    {{> pets/footer-block}} 
+    <div class="ui two column grid stackable main-content-section">
+        <!--User has two options. They can either...
+            take a compatability quiz or go straight to search page.-->
+        <div class="row">
+            <div class="eight wide column">					
+                <div class="ui fluid card">
+                    <div class="header home-page-header">
+                        <h2>Liked pets list</h2>
+                    </div>
+                    <div class="content">
+                        {{> pets/pets-liked}}
+                    </div>
+                </div>                     
+            </div>
+            <div class="eight wide column">					
+                <div class="ui fluid card">
+                    <div class="header home-page-header">
+                        <h2>Pet compatibility assessment results</h2>
+                    </div>
+                    <div class="content">
+                            <div class="pet-match-results">
+                                <p class="pet-match-results" id="saved-quiz-results"></p>
+                            </div>
+                    </div>
+                </div>                     
+            </div>
+        </div>
+    </div>
 </div>
+<!--Footer-->
+<!--https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end-->
+{{> pets/footer-block}} 
+
+<!--Opens the About modal in the hamburger menu-->
+{{> modals/about-modal}} 
+
+<!--Opens the Contact modal in the hamburger menu-->
+{{> modals/contact-modal}}
+
+<!--Opens the Help modal in the hamburger menu-->
+{{> modals/help-modal}}

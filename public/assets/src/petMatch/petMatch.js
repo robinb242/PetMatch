@@ -192,6 +192,7 @@ function findMatch() {
             if (data) {
                 // $("#stats").show();
                 $("#thePet").text(data);
+                $("#thePet").attr("data-match", data);
                 // $("#displaypic").text(data);
 
 
@@ -200,16 +201,38 @@ function findMatch() {
                 $("#match-results-modal").text("sorry, no match has been found, you will continue to be lonely")
             }
         });
-        //Send the POST request using ajax.
-        // $.ajax("/api/new", {
-        //     type: "POST",
-        //     data: userQuizValues
-        //     }).then(
-        //     function() {
-        //         console.log("posted quiz values");
-        //     }
-        //     );
+
     });
 }
+
+//Click event for saving quiz results
+$("#save-results").on("click", function() {
+    console.log("save results button clicked");
+    var newMatch = $("#thePet").data("match");
+    //Grab pet name
+    //When user clicks save results, save the match results to the database.
+    var newMatch = {
+        pet_match: $("#thePet").data('match'),
+        pet_rating: 1,
+    };
+
+    //debuggging
+    console.log(newMatch);
+
+    // Send the POST request using ajax.
+    $.ajax("/api/matches", {
+        type: "POST",
+        data: newMatch
+    }).then(
+    function() {
+        console.log("added match results");
+    });      
+});
+
+//GET the user's saved quiz results from the database and display the results on the saved pets page so that the user can view the results later.
+$.get("/api/matches", function(matchData) {
+    console.log(matchData);
+    $("#saved-quiz-results").text("Your match: " + matchData[0].pet_match);
+    });
 
 

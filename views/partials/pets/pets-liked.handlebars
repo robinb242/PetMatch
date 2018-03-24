@@ -1,0 +1,12 @@
+{{#each pets}}
+	{{!-- {{#if liked}} --}}
+	<div class="liked-pets-list">
+		<p class="liked-pet-details">Name: {{this.pet_name}}</p>
+		<p class="liked-pet-details">Shelter: {{this.pet_shelter}}</p>
+		<p class="liked-pet-details">Contact shelter: {{this.pet_email}}</p>
+		
+		<!--Button to remove pet from liked pets list-->
+		<button class="delete-pet ui button" data-id="{{this.id}}"><i class="trash icon"></i> Remove from list</button> 
+	</div>
+	{{!-- {{/if}} --}}
+{{/each}}

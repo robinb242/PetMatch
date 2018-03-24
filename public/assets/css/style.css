@@ -1,18 +1,55 @@
 
-/*footer styling*/
-/*https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end*/
-@media (min-height: 320px) {
-    .app-footer { 
-      position: absolute;
-      bottom: 0 !important;
-      padding: 20px !important;
-      margin-top: 60px !important;
-    }
-  }
+/*Background image*/
+body {
+  background-image: url('/assets/img/paw-print.jpg');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
+
+/*App navbar and footer color*/
+.app-footer, .app-navbar {
+  /*https://coolors.co/1572bf-4fe5c8-024699-1ab6cd-8cee8b*/
+  background-color: #024699 !important;
+}
+
+/*Have consistent color for buttons throughout the UI.*/
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close {
+  background-color: #024699 !important;
+  color: white !important;
+}
+
+/*Search for pet in your area card on home page */
+#search-for-card {
+  margin-top: 40px !important;
+}
+
+/*Styling for card headers on home page */
+.home-page-header, #pet-search-buttons, #quiz-header {
+  background-color: #024699 !important;
+  padding: 15px !important;
+  color: white !important;
+}
+
+/*Quiz instructions*/
+#quiz-instructions {
+  font-size: 24px !important;
+}
 
 /*Add margin in between the home page main content section and the top navigation bar */
 .main-content-section {
-    margin-top:  20px !important;
+    margin-top:  0px !important;
+}
+
+/*Styling specific to the search button on the search page*/
+#search-btn {
+  margin-top: 15px;
+}
+
+/*Styling for labels on pet search form*/
+label {
+  font-size: 18px !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px !important;
 }
 
 /*Styling for choice buttons in compatibility quiz*/
@@ -30,7 +67,23 @@
   margin-top: 30px;
 }
 
-/* Pet profile card */
-.search-card {
-  margin-left: 40px !important;
+/*footer styling*/
+/*https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end*/
+@media (min-height: 320px) {
+  .app-footer { 
+    position: absolute;
+    bottom: 0 !important;
+    padding: 20px !important;
+    margin-top: 60px !important;
+  }
+}
+
+/*Liked pets list*/
+.liked-pets-list {
+  margin-top: 30px;
+}
+
+/* Pet details in the liked pets list */
+.liked-pet-details, .pet-match-results {
+  font-size: 18px !important;
 }
