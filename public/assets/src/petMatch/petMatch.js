@@ -192,6 +192,7 @@ function findMatch() {
             if (data) {
                 // $("#stats").show();
                 $("#thePet").text(data);
+                $("#thePet").attr("data-match", data);
                 // $("#displaypic").text(data);
 
 
@@ -200,15 +201,31 @@ function findMatch() {
                 $("#match-results-modal").text("sorry, no match has been found, you will continue to be lonely")
             }
         });
-        //Send the POST request using ajax.
-        // $.ajax("/api/new", {
-        //     type: "POST",
-        //     data: userQuizValues
+
+        //Click event for saving quiz results
+        // $("#save-results").on("click", function() {
+        //     console.log("save results button clicked");
+        //     var newMatch = $("#thePet").data("match");
+        //     //Grab pet name
+        //     //When user likes a pet, set liked state to true
+        //     var newMatch = {
+        //         pet_match: $("#thePet").data('match'),
+        //         pet_rating: 1,
+        //     };
+
+        //     console.log(newMatch);
+
+        //     // Send the POST request using ajax.
+        //     $.ajax("/api/matches", {
+        //         type: "POST",
+        //         data: newMatch
         //     }).then(
         //     function() {
-        //         console.log("posted quiz values");
-        //     }
-        //     );
+        //         console.log("added match results");
+        //         // Reload the page to get the updated list
+        //         //location.reload();
+        //     });
+        // });
     });
 }
 

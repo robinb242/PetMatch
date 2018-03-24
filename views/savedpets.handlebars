@@ -8,7 +8,7 @@
         <h1>My saved pets<h1>
     </div>
 
-    <div class="ui two column grid main-content-section">
+    <div class="ui two column grid stackable main-content-section">
         <!--User has two options. They can either...
             take a compatability quiz or go straight to search page.-->
         <div class="row">
@@ -28,7 +28,11 @@
                         <h2>Pet compatibility assessment results</h2>
                     </div>
                     <div class="content">
-                        
+                        {{#each matches}} 
+                            <div class="pet-match-results">
+                                <p class="pet-match-results">Your match assessment results: {{this.pet_match}}</p>
+                            </div>
+                        {{/each}}             
                     </div>
                 </div>                     
             </div>

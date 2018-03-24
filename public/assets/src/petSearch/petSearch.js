@@ -157,7 +157,7 @@ function startSearchRequest(queryURL) {
         likeBtn.addClass("ui pink button likeBtn");
         dislikeBtn.addClass("ui teal button dislikeBtn")
         //Give each button a data attribute called data-choice.
-        likeBtn.attr("data-choice", petData.petfinder.pets.pet[i].name.$t);
+        likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t);
         //Then give each button text.
         dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
         likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
@@ -211,7 +211,9 @@ function startSearchRequest(queryURL) {
             //Grab pet name
             //When user likes a pet, set liked state to true
             var newPet = {
-                pet_name: $(this).data('choice'),
+                pet_name: $(this).data('name'),
+                pet_shelter: $(this).data('shelter'),
+                pet_email: $(this).data('email'),
                 liked: true
             };
 
@@ -231,6 +233,7 @@ function startSearchRequest(queryURL) {
 
         //Click event to remove a pet from liked pets list.
         $(".delete-pet").on("click", function(event) {
+            console.log("delete button clicked");
             var id = $(this).data("id");
         
             // Send the DELETE request using ajax.
