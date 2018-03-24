@@ -1,20 +1,35 @@
 
 /*Background image*/
+/*Stack overflow: https://css-tricks.com/perfect-full-page-background-image/*/
 body {
-  background-image: url('/assets/img/paw-print.jpg');
-  /* background-repeat: no-repeat; */
+  background-image: url('/assets/img/background.jpg');
+  background-repeat: no-repeat; 
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
 }
+html {
+  background: url('assets/img/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
 
 /*App navbar and footer color*/
 .app-footer, .app-navbar {
   /*https://coolors.co/1572bf-4fe5c8-024699-1ab6cd-8cee8b*/
-  background-color: #024699 !important;
+  /*https://coolors.co/db6c6d-7c415b-d84f49-55504d-9a4c48*/
+  /*https://coolors.co/c9434a-52382b-df8b80-b9575a-4a1a30*/
+  background-color: #4A1A30 !important;
 }
 
 /*Have consistent color for buttons throughout the UI.*/
 #take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close {
-  background-color: #024699 !important;
+  background-color: #C9434A !important;
   color: white !important;
 }
 
@@ -25,7 +40,7 @@ body {
 
 /*Styling for card headers on home page */
 .home-page-header, #pet-search-buttons, #quiz-header {
-  background-color: #024699 !important;
+  background-color: #4A1A30 !important;
   padding: 15px !important;
   color: white !important;
 }
@@ -47,7 +62,7 @@ body {
 
 /*Styling for labels on pet search form*/
 label {
-  font-size: 18px !important;
+  font-size: 20px !important;
   margin-top: 15px !important;
   margin-bottom: 10px !important;
 }
@@ -78,9 +93,14 @@ label {
   }
 }
 
-/*Liked pets list*/
+/*Liked pets list on saved pets page.*/
 .liked-pets-list {
   margin-top: 30px;
+}
+
+/*liked pets card on saved pets page.*/
+#liked-pet-card {
+  margin-top: 100px !important;
 }
 
 /* Pet details in the liked pets list */

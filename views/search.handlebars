@@ -2,14 +2,19 @@
 {{> pets/navbar-block}} 
 
 <div class="ui container">
-    <div id="header">
-        <h1>Search for the perfect pet<h1>
-    </div>
 
     <div class="ui stackable two column grid main-content-section">
         <div class="stretched row">
+            <!--Pet search results section-->
+            <div class="eleven wide column" id="search-results">
+                <!--Dynamically create pet profile div for each pet returned from the petfinder API-->
+                <!--Display results here-->
+            </div>
             <!--Pet search form-->
-            <div class="four wide column">					
+            <div class="five wide column">
+                <div id="header">
+                    <h1>Search for the perfect pet<h1>
+                </div>				
                 <div class="ui sidebar">
                     ...
                 </div>
@@ -22,12 +27,6 @@
                         <img id="pet-search-photo">
                     </div>
                 </div>
-            </div>
-
-            <!--Pet search results section-->
-            <div class="twelve wide column" id="search-results">
-                <!--Dynamically create pet profile div for each pet returned from the petfinder API-->
-                <!--Display results here-->
             </div>
         </div>
     </div>
