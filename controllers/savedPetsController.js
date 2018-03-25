@@ -72,4 +72,15 @@ module.exports = function(app) {
         res.end();
         });   
     });
+
+       //DELETE route to remove all of the user's pet quiz results from the saved pets page.
+       app.delete("/api/matches/", function(req, res) {
+        db.Match.destroy ({
+            where: {
+                // criteria
+            }
+        }).then(function(result){
+        res.end();
+        });   
+    });
 }
