@@ -107,3 +107,13 @@ label {
 .liked-pet-details, .pet-match-results {
   font-size: 18px !important;
 }
+
+/*Pet profile cards in search results on search page*/
+#pet-name {
+  font-size: 24px !important;
+}
+
+/*Font size of page headers*/
+.page-header {
+  font-size: 30px !important;
+}

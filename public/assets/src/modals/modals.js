@@ -25,3 +25,10 @@ $("#logout-modal-link").on("click", function() {
     .modal('show')
   ;
 });
+
+//Opens the pet description from the search results section of the saved pets page.
+$(".petDescBtn").on("click", function() {
+  $('#pet-desc-modal')
+    .modal('show')
+  ;
+});
