@@ -28,7 +28,7 @@ html {
 }
 
 /*Have consistent color for buttons throughout the UI.*/
-#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results {
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results, #delete-match-results, .delete-pet-confirmed {
   background-color: #C9434A !important;
   color: white !important;
 }
