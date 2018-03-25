@@ -12,6 +12,8 @@ $(function() {
             }).then(
             function() {
                 console.log("removed pet", id);
+                //reload page to display updated liked pets list.
+                location.reload();
             }
         );
     });

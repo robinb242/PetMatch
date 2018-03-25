@@ -118,12 +118,6 @@ function startSearchRequest(queryURL) {
         //Example of how to retrieve a specific pet's age:
         //console.log(petData.petfinder.pets.pet[0].age.$t)
 
-        //Display number of matches/search results returned from petfinder API to user.
-        var numberMatches = $("<h1>");
-        numberMatches.attr("id", "number-matches");
-        numberMatches.append("Your matches");
-        $("#search-results").append(numberMatches);
-
         for (var i = 0; i < petData.petfinder.pets.pet.length; i++) {
         //Show pet profile card and image when user clicks search.
         $(".search-card").show();
@@ -170,6 +164,10 @@ function startSearchRequest(queryURL) {
         //Append the pet information to the pet profile for each pet.
         petProfile.append(petDetailsDiv);
 
+        //Pet description button
+        // var petDescBtn = $("<btn>");
+        // petDescBtn.addClass("ui button petDescBtn").attr("id", "pet-desc-" + i).text("More information");
+
         //pet name.
         var petName = $("<h4>")
         petName.attr("id", "pet-name");
@@ -191,19 +189,24 @@ function startSearchRequest(queryURL) {
         shelterEmail.attr("id", "shelter-email");
 
         //pet photo
-        //petPhoto.attr("src", petData.petfinder.pets.pet[i].media.photos.photo[2].$t);
+        var petPhoto = $("<img>");
+        petPhoto.addClass("left floated");
+        petPhoto.attr("src", petData.petfinder.pets.pet[i].media.photos.photo[2].$t);
 
         //Grab the pet name, age, location, and description data from the petfinder API.
-        petName.append("Name: " + petData.petfinder.pets.pet[i].name.$t);
+        petName.append(petData.petfinder.pets.pet[i].name.$t);
         petAge.append("Age: " + petData.petfinder.pets.pet[i].age.$t);
         petLocation.append("Shelter: " + petData.petfinder.pets.pet[i].shelterId.$t);
         shelterEmail.append("Shelter contact information: " + petData.petfinder.pets.pet[i].contact.email.$t);
         petDescription.append("Description: " + petData.petfinder.pets.pet[i].description.$t);
-        petDetailsDiv.append(petName).append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
+        likeBtnDiv.append(petName);
+        petDetailsDiv.append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
+        petDetailsDiv.append(petPhoto);
 
         //Click event for liking a pet.
         $(likeBtn).on("click", function() {
             console.log("liked button clicked");
+
             var newLike = $(this).data("newlike");
             //Grab pet name
             //When user likes a pet, set liked state to true
