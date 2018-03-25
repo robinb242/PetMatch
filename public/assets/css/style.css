@@ -28,7 +28,7 @@ html {
 }
 
 /*Have consistent color for buttons throughout the UI.*/
-#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close {
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results {
   background-color: #C9434A !important;
   color: white !important;
 }
@@ -39,7 +39,7 @@ html {
 }
 
 /*Styling for card headers on home page */
-.home-page-header, #pet-search-buttons, #quiz-header {
+.home-page-header, #pet-search-buttons, #quiz-header, .modal-header {
   background-color: #4A1A30 !important;
   padding: 15px !important;
   color: white !important;
@@ -75,11 +75,6 @@ label {
 /*Styling for the app navbar*/
 .app-navbar {
   padding: 20px !important;
-}
-
-/* Rate this match button on match results modal*/
-#match-rating-btn {
-  margin-top: 30px;
 }
 
 /*footer styling*/

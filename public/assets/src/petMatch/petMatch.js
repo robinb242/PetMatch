@@ -208,6 +208,17 @@ function findMatch() {
 //Click event for saving quiz results
 $("#save-results").on("click", function() {
     console.log("save results button clicked");
+    //Display success message to tell user results were saved successfully.
+    $.uiAlert({
+        textHead: 'Results saved successfully.', // header
+        text: 'Click My saved pets at the top of the page to view your results.', // Text
+        bgcolor: '#C9434A', // background-color
+        textcolor: '#fff', // color
+        position: 'bottom-center',// position . top And bottom ||  left / center / right
+        icon: 'heart', // icon in semantic-UI
+        time: 4, // time
+            })
+    
     var newMatch = $("#thePet").data("match");
     //Grab pet name
     //When user clicks save results, save the match results to the database.
