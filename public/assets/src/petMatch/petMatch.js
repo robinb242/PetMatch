@@ -21,25 +21,25 @@ var userQuizValues = [];
 var questionSet = {
     questionArray: [{
         question: "I would prefer a pet that is good around other animals and other people, especially children.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question:  "I would like to have a pet that enjoys being outdoors and and that would like exercising with me.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question: "I would like a pet that is loyal and able to be trained to protect me and my family.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question: "I consider myself to be an affectionate, emotional person.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
 
         }, {
         question: "I prefer a pet that likes to stay inside and cuddle with me.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question: "I have a big backyard.",
         choices: ["YES", "NO"],
@@ -51,8 +51,8 @@ var questionSet = {
 
         }, {
         question: "I don't mind a pet that is always willing to give me affection and is very energetic.",
-        choices: ["AGREE", "DISAGREE"],
-        values: ["1", "0"]
+        choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
+        values: ["1", "2", "3", "4", "5"]
         }, {
         question: "I always keep my house clean and organized.",
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
