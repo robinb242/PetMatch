@@ -1,5 +1,5 @@
 //Construct query URL to get pet data from petfinder API.
-var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
+var queryURLBase = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
 var queryURLBase2;
 
 //Create variable for LIKE button so that we can create it using jQuery.
