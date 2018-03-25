@@ -3,24 +3,29 @@
     <div class="header modal-header">
         You have a match!
     </div>
-    <div class="image content">
+    <div class="content">
         <div class="description">
             <div class="ui header">
-                <p>Quiz results - your ideal pet is </p><div id="thePet" ></div>
+                <p>Your ideal pet is <span id="thePet" >.</span></p>
             </div>
             <!--Search for pets related to matching pet.-->
             <a href="petsearch" target="_blank">
                 <button id="find-matching-pets" class="ui button"><i class="search icon"></i> Find matching pets</button>
             </a>
             <br>
+            <!--Rate this match feature-->
+            <div class="ui header">
+                How did we do? Rate your match results on a scale of 1 (not very accurate) to 5 (spot on).
+            </div>
+            <!--User feedback on pet match results-->
+            <div class="ui heart huge rating left floated" data-rating="3" data-max-rating="5"></div>
 
         </div>
     </div>
     <div class="actions">
-        <!--Rate this match feature-->
-        <button class="ui button left floated" id="match-rating-btn">
+        {{!-- <button class="ui button left floated" id="match-rating-btn">
             <i class="star icon"></i> Rate this match
-        </button>
+        </button> --}}
         <button class="ui right labeled icon button" id="save-results">
             <i class="heart outline icon"></i> SAVE RESULTS
         </button>
