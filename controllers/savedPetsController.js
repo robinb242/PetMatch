@@ -37,7 +37,7 @@ module.exports = function(app) {
         console.log("Pet match: " + req.body.pet_match);
         db.Match.create({
             pet_match: req.body.pet_match,
-            pet_rating: 1
+            pet_rating: req.body.pet_rating
     }).then(function(matchResults) {
         console.log(matchResults);
         //results here would be the newly created pet

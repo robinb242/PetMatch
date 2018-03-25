@@ -205,6 +205,18 @@ function findMatch() {
     });
 }
 
+var userRating;
+//Get user rating from match results.
+$('.ui.rating')
+.rating({
+    maxRating: 5,
+    onRate: function (rating) {
+        console.log(rating)
+        userRating = rating;
+    }
+});
+
+
 //Click event for saving quiz results
 $("#save-results").on("click", function() {
     console.log("save results button clicked");
@@ -224,7 +236,7 @@ $("#save-results").on("click", function() {
     //When user clicks save results, save the match results to the database.
     var newMatch = {
         pet_match: $("#thePet").data('match'),
-        pet_rating: 1,
+        pet_rating: userRating,
     };
 
     //debuggging
@@ -243,7 +255,18 @@ $("#save-results").on("click", function() {
 //GET the user's saved quiz results from the database and display the results on the saved pets page so that the user can view the results later.
 $.get("/api/matches", function(matchData) {
     console.log(matchData);
-    $("#saved-quiz-results").text("Your match: " + matchData[0].pet_match);
+    for (var i=0; i < matchData.length; i++) {
+        //Create div to hold user's saved pet match results.
+        var savedMatchResults = $("<div>");
+        savedMatchResults.attr("id", matchData[i].pet_match + "-" + i).addClass("saved-match-results");
+        $(".pet-match-results").append(savedMatchResults);
+        //Add the pet match name and the user's rating to the user's saved pet match results.
+        var savedPetMatchName = $("<p>");
+        var savedPetMatchRating = $("<p>");
+        savedPetMatchName.text("Your match: " + matchData[i].pet_match);
+        savedPetMatchRating.text("Your rating: " + matchData[i].pet_rating);
+        savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating);
+    }
     });
 
 

@@ -236,41 +236,4 @@ function startSearchRequest(queryURL) {
 });
 }
 
-//When user clicks Like button, go to the next pet.
-// function nextPet() {
-// 	//Increment the search count by 1
-//     searchCount++
-//     //Remove previous pet from HTML before going onto the next pet in the search results.
-//     $(".search-card").hide();
-//     //Remove buttons from previous pet from HTML.
-//     $("#like-btn-span").empty();
-//     $("#dislike-btn-span").empty();
-//     //Remove pet search details from previous pet from HTML.
-//     $("#pet-name").empty();
-//     $("#pet-age").empty();
-//     $("#pet-trained").empty();
-//     $("#pet-city").empty();
-//     //If user reaches the max number of search results available, tell user no more available pets.
-//     if (searchCount === petData.petfinder.pets.length) {
-//         endSearch();
-//     }
-
-//     //else, if there are still pets left, go to next pet.
-//     else {
-//         startSearchRequest();
-//     }
-// }
-
-// //If there are no more available pets for the current search, end search.
-// function endSearch() {
-//     //Show search card.
-//     $(".search-card").show();
-//     //Remove pet search image, details, and buttons.
-//     $("#pet-search-image").hide();
-//     $("#pet-search-buttons").hide();
-//     $("#pet-search-details").hide();
-//     //Tell user there are no more pets for this search.
-//     $("#end-pet-search").show();
-// }
-
 
