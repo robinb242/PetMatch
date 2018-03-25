@@ -35,41 +35,6 @@
                         <!--View quiz results button will be added to this div when user finishes div and quiz results are ready.-->
                     </div>
                 </div>
-
-                <!--View results modal-->
-                <div class="ui modal" id="match-results-modal">
-                    <i class="close icon"></i>
-                    <div class="header">
-                        You have a match!
-                    </div>
-                    <div class="image content">
-                        <div class="ui medium image">
-                            <img src="https://www.puppyfind.com/member_photos/full/y/ypf4h5990ns.jpg">
-                        </div>
-                        <div class="description">
-                            <div class="ui header">
-                                <p>Quiz results - your ideal pet is </p><div id="thePet" ></div>
-                            </div>
-                            <!--Search for pets related to matching pet.-->
-                            <a href="petsearch" target="_blank">
-                                <button class="ui button pink"><i class="search icon"></i> Find matching pets</button>
-                            </a>
-                            <br>
-                            <!--Rate this match feature-->
-                            <button class="ui pink button left" id="match-rating-btn">
-                                <i class="star icon"></i> Rate this match
-                            </button>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <button class="ui pink right labeled icon button" id="save-results">
-                            <i class="heart outline icon"></i> SAVE RESULTS
-                        </button>
-                        <button class="ui right labeled icon button" id="close">
-                            CLOSE
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -89,3 +54,6 @@
 
 <!--Opens the Logout modal in the hamburger menu-->
 {{> modals/logout-modal}} 
+
+<!--Opens the view results modal at the end of the quiz-->
+{{> modals/view-results-modal}}

@@ -1,0 +1,31 @@
+<!--View results modal-->
+<div class="ui modal" id="match-results-modal">
+    <div class="header modal-header">
+        You have a match!
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">
+                <p>Quiz results - your ideal pet is </p><div id="thePet" ></div>
+            </div>
+            <!--Search for pets related to matching pet.-->
+            <a href="petsearch" target="_blank">
+                <button id="find-matching-pets" class="ui button"><i class="search icon"></i> Find matching pets</button>
+            </a>
+            <br>
+
+        </div>
+    </div>
+    <div class="actions">
+        <!--Rate this match feature-->
+        <button class="ui button left floated" id="match-rating-btn">
+            <i class="star icon"></i> Rate this match
+        </button>
+        <button class="ui right labeled icon button" id="save-results">
+            <i class="heart outline icon"></i> SAVE RESULTS
+        </button>
+        <button class="ui right labeled icon cancel button" id="close">
+            CLOSE
+        </button>
+    </div>
+</div>

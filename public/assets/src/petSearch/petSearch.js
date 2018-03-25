@@ -1,13 +1,3 @@
-//Pet type search field drop down
-// $('#pet-type-field') 
-//   .dropdown();
-
-
-// //Gender search field drop down
-// $('#gender-field')
-//   .dropdown()
-// ;
-
 //Construct query URL to get pet data from petfinder API.
 var queryURLBase = "http://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&animal=";
 var queryURLBase2;
@@ -145,7 +135,7 @@ function startSearchRequest(queryURL) {
         likeBtn = $("<button>");
         // dislikeBtn = $("<button>");
         //Add semantic UI styling to the buttons.
-        likeBtn.addClass("ui pink button likeBtn");
+        likeBtn.addClass("ui button likeBtn");
         // dislikeBtn.addClass("ui teal button dislikeBtn")
         //Give each button a data attribute called data-choice.
         likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t);
@@ -206,6 +196,16 @@ function startSearchRequest(queryURL) {
         //Click event for liking a pet.
         $(likeBtn).on("click", function() {
             console.log("liked button clicked");
+            //Display success message when user likes a pet.
+            $.uiAlert({
+                textHead: 'You liked ' + $(this).data('name') + ".", // header
+                text: 'Click My saved pets at the top of the page to view your liked pets.', // Text
+                bgcolor: '#C9434A', // background-color
+                textcolor: '#fff', // color
+                position: 'bottom-center',// position . top And bottom ||  left / center / right
+                icon: 'heart', // icon in semantic-UI
+                time: 4, // time
+                  })
 
             var newLike = $(this).data("newlike");
             //Grab pet name
