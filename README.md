@@ -29,7 +29,7 @@ https://pet-match-app.herokuapp.com/
   * [MVC design pattern](#about-mvc)
  
 ### <a name="how-app-works"></a> How the app works
-This project is a full stack application that helps simplify the pet adoption process. The application is meant to help connect you with animal shelters and rescue organization in your area. 
+This project is a full stack application that helps simplify the pet adoption process. The application is meant to help connect you with animal shelters and rescue organizations in your area. 
 
 After you log in to the app, you are taken to the home screen. When you get to the home screen of the app, you have two options. You can take a compatibility assessment, which takes you through some questions and matches you with a pet based on your personality, preferences, and interests. After you take the quiz, you will get your results back, and you can use those results and the pet search feature to search for matching pets in your area. At the end of the quiz, you also have the option to save your results to view later, which saves them to the <b>My saved pets</b> page as well as to the MySQL database. 
 
@@ -42,7 +42,7 @@ This project uses MySQL, Node.js, Express, Handlebars, Sequelize, and Semantic U
 This project also follows the MVC (Model-View-Controller) design pattern. The MVC design pattern assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with one another.
 
   * <b>View object:</b>
-  A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user clicks the <b>Like</b> button next to the name of the pet that they like. The view communicates the pet information associated with the <b>Like</b> button via the controller to the model.
+  A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user clicks the <b>Like</b> button next to the name of the pet that they want to add to their favorite pets list. The view communicates the pet information associated with the <b>Like</b> button via the controller to the model.
 
   * <b>Controller object:</b>
   A controller object controls the flow of data between the view and the model (that is, the controller is an intermediary between the two). The controller interprets any user changes made in the view and communicates the changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the updated data in the user interface.
@@ -102,19 +102,19 @@ The first step is to clone the project repository to a local directory on your c
       <li><b>assets/css/style.css</b>: External CSS stylesheet.</li>
       <li><b>assets/img</b>: Contains the background image used in the application.</li>
       <li><b>assets/src/modals</b>: Contains the front end Javascript that opens the modals in the application.</li
-	  <li><b>assets/src/petDelete</b>: Contains the front end Javascript to delete a liked pet from the <b>My saved pets</b> page as well as delete the compatibility assessment results.</li>
+	  <li><b>assets/src/petDelete</b>: Contains the front end Javascript used to delete a liked pet from the <b>My saved pets</b> page as well as delete the compatibility assessment results.</li>
 	  <li><b>assets/src/petSearch</b>: Contains the front end Javascript that allows a user to search for a pet. When a user fills outs the pet search form, a query is made to the Petfinder API based on the user input from the search form. The matching pets are returned from the API and displayed to the user in the application user interface.</li>
 	  <li><b>assets/src/petMatch</b>: Contains the front end Javascript used to run through the list of assessment questions and come up with a potential pet match for a user.</li
     </ul>
   </li>
   <li>
-    <p><b>models</b>: Contains a file called <b>match.js</b>, which contains information used to manage the application data and interact with the database. The models describe the structure of the database tables, and the datatypes that eac column of the table can contain. For this project, the database includes two models:</p>
+    <p><b>models</b>: Contains information used to manage the application data and interact with the database. The models describe the structure of the database tables, and the datatypes that each column of the table can contain. For this project, the database includes two models:</p>
 	<ul>
 		<li><b>match.js</b>: This defines the sequelize model for saving users' assessment results to the MySQL database. The model defines a database table that has two columns (one for the assessent results and one for the match rating).</li>
 		<li><b>pets.js</b>: This defines the sequelize model for saving any pets that the user likes to the MySQL database. The model defines a database table that includes columns for pet name, pet shelter location, shelter contact information, and whether or not the user likes the pet.</li>
   </li>
   <li>
-    <p><b>db/schema.sql</b>:Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
+    <p><b>db/schema.sql</b>: Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
   </li>
   <li>
     <p><b>config</b>: Contains the config.json file, whic includes the code to connect Node to MySQL.
@@ -182,7 +182,7 @@ MYSQL_PASSWORD='<i>mysql_password</i>'
 <p>This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because <b>.env</b> is specified in the .gitignore file, the password is kept private.</p>
 
 ### <a name="db-connect">7. Verify database connection information</a>
-<p>Open the <b>config/config.json</b> file and verify that the database connection information (host, user, port, password, and database) in the development section reflects the database you just created.</p>
+<p>Open the <b>config/config.json</b> file and verify that the database connection information (host, username, password, and database) in the development section reflects the database you just created.</p>
 <p>Modify the connection properties as needed to reflect your database instance.</p>
 <p>For example:</p>
 <pre>
@@ -254,4 +254,4 @@ nodemon server.js
 
 
 ## <a name ="Issues"></a> Issues
-<p>If you find an issue while using the app or have a request, <a href="https://github.com/robin242/PetMatch/issues/" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.</p>
+<p>If you find an issue while using the app or have a request, <a href="https://github.com/robinb242/PetMatch/issues" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.</p>
