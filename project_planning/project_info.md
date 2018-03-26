@@ -1,4 +1,6 @@
-## Heroku 
+# Project Planning Information
+
+## Team Heroku dashboard
 * https://dashboard.heroku.com/teams/dream-team/overview
 
 ## Project Plan/Proposal
@@ -42,18 +44,6 @@
 * https://www.petfinder.com/developers/api-docs
 * https://github.com/helenuria/Petfinder-API
 
-## Other pet matching apps
-* http://adopt.pawslikeme.com/
-* https://www.allpaws.com/
-
-## About this project
-
-## Screenshots
-
-## Getting started
-
-## Running tests
-
 ### Getting started 
 <p>To run one of the tests locally on your computer, perform the following steps</p>
 
@@ -92,20 +82,3 @@ If all checks pass, all pages load without error.
 <p>An Electron browser window will open and take you through the pet compatibility quiz workflow.</p>
 
 2. Verify that there are no errors and the quiz results modal opens.
-
-
-
-## Technologies used to build app
-
-### Backend technologies
-* Sequelize ORM
-* MySQL Database
-* Node.js
-* Express
-* Facebook authentication (new technology)
-
-### Frontend technologies
-* Semantic UI CSS framework (https://semantic-ui.com/)
-* HTML
-* CSS
-* Handlebars
