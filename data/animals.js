@@ -6,7 +6,7 @@
 var animal = [
   {
     routeName: "cat",
-    name: "cat",
+    name: "Siamese",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -22,8 +22,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "dobberman",
-    name: "dobberman",
+    routeName: "dog",
+    name: "Doberman Pinscher",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -39,8 +39,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "snake",
-    name: "Anaconda",
+    routeName: "dog",
+    name: "Black Labrador Retriever",
     role: "pet",
     compatability: 0,
     ChildFriendly: 1,
@@ -56,8 +56,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "rat",
-    name: "Hamster",
+    routeName: "dog",
+    name: "Shetland Sheepdog Sheltie",
     role: "pet",
     compatability: 0,
     ChildFriendly: 3,
@@ -73,8 +73,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "bird",
-    name: "parrot",
+    routeName: "dog",
+    name: "German Shepherd Dog",
     role: "pet",
     compatability: 0,
     ChildFriendly: 2,
@@ -90,8 +90,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "monkey",
-    name: "chipmunk",
+    routeName: "dog",
+    name: "Dalmatian",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
@@ -107,8 +107,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "rabbit",
-    name: "rabbit",
+    routeName: "dog",
+    name: "Collie",
     role: "pet",
     compatability: 0,
     ChildFriendly: 3,
@@ -124,8 +124,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "turttle",
-    name: "turttle",
+    routeName: "dog",
+    name: "Yellow Labrador Retriever",
     role: "pet",
     compatability: 0,
     ChildFriendly: 2,
@@ -141,8 +141,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "lizard",
-    name: "chameleon",
+    routeName: "dog",
+    name: "Golden Retriever",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
@@ -158,8 +158,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "chinchilla",
-    name: "chinchilla",
+    routeName: "dog",
+    name: "Bernese Mountain Dog",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -175,8 +175,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "ferret",
-    name: "ferret",
+    routeName: "cat",
+    name: "Persian",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
@@ -192,8 +192,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "fish",
-    name: "fish",
+    routeName: "cat",
+    name: "Himalayan",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
@@ -210,7 +210,7 @@ var animal = [
   },
   {
     routeName: "dog",
-    name: "german shepherd",
+    name: "Standard Poodle",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -227,7 +227,7 @@ var animal = [
   },
   {
     routeName: "dog",
-    name: "siberian husky",
+    name: "Siberian Husky",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -244,7 +244,7 @@ var animal = [
   },
   {
     routeName: "dog",
-    name: "pit bull",
+    name: "Jack Russell Terrier",
     role: "pet",
     compatability: 0,
     ChildFriendly: 2,
@@ -261,7 +261,7 @@ var animal = [
   },
   {
     routeName: "dog",
-    name: "poodle",
+    name: "Brittany Spaniel",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
@@ -277,8 +277,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "cat",
-    name: "egyptian cat",
+    routeName: "dog",
+    name: "Australian Shepherd",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -295,7 +295,7 @@ var animal = [
   },
   {
     routeName: "cat",
-    name: "persian cat",
+    name: "Siberian",
     role: "pet",
     compatability: 0,
     ChildFriendly: 5,
@@ -311,8 +311,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "rat",
-    name: "guinnea pig",
+    routeName: "cat",
+    name: "American Shorthair",
     role: "pet",
     compatability: 0,
     ChildFriendly: 3,
@@ -328,8 +328,8 @@ var animal = [
     bio: ""
   },
   {
-    routeName: "rat",
-    name: "gerbil",
+    routeName: "cat",
+    name: "Tabby",
     role: "pet",
     compatability: 0,
     ChildFriendly: 4,
