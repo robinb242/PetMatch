@@ -122,7 +122,7 @@ The first step is to clone the project repository to a local directory on your c
   <li>
     <p><b>controllers</b>: Contains two files.<p>
 		<ul>
-			<li><b>petMatchController.js</b>, which contains different routes for getting and posting user assessment results. These routes are used to pass information to and from the view and model objects.<li>
+			<li><b>petMatchController.js</b>, which contains different routes for getting and posting user assessment results. These routes are used to pass information to and from the view and model objects.</li>
 			<li><b>savedPetsController.js</b>, which contains different routes for posting liked pet information to the database, getting pet data from the database, and deleting liked pet information from the database.</li>
 		</ul>
   <li>
