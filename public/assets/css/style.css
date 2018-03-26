@@ -133,5 +133,10 @@ main {
   flex: 1 0 auto;
   margin-top: 50px;
 }
+.ui.segment {
+position: absolute !important;
+ bottom: 0px !important;
+ width: 100% !important; 
+}
 
 

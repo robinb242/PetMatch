@@ -1,7 +1,7 @@
 ### Schema
 
-DROP DATABASE IF EXISTS `petMatchDB`;
-CREATE DATABASE `petMatchDB`;
+ CREATE DATABASE petMatchDB;
+USE petMatchDB;
 
 
 
