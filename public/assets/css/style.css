@@ -2,7 +2,11 @@
 /*Background image*/
 /*Stack overflow: https://css-tricks.com/perfect-full-page-background-image/*/
 body {
+<<<<<<< Updated upstream
   background-image: url('/assets/img/background.jpg') !important;
+=======
+  background-image: url('/assets/img/background.jpg');
+>>>>>>> Stashed changes
   background-repeat: no-repeat; 
   background-size: cover;
   -webkit-background-size: cover;
@@ -10,13 +14,23 @@ body {
   -o-background-size: cover;
   height: 100%;
   width: 100%;
+<<<<<<< Updated upstream
 }
 html {
   background: url('assets/img/background.jpg') no-repeat center center fixed !important;
   background-size: cover;
   height: 100%;
   overflow: hidden;
+=======
+>>>>>>> Stashed changes
 }
+html {
+  background: url('assets/img/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
 
 
 /*App navbar and footer color*/
@@ -24,12 +38,21 @@ html {
   /*https://coolors.co/1572bf-4fe5c8-024699-1ab6cd-8cee8b*/
   /*https://coolors.co/db6c6d-7c415b-d84f49-55504d-9a4c48*/
   /*https://coolors.co/c9434a-52382b-df8b80-b9575a-4a1a30*/
+<<<<<<< Updated upstream
   background-color: #672729 !important;
 }
 
 /*Have consistent color for buttons throughout the UI.*/
 #take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results, #delete-match-results, .delete-pet-confirmed {
   background-color: #672729 !important;
+=======
+  background-color: #4A1A30 !important;
+}
+
+/*Have consistent color for buttons throughout the UI.*/
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet,  #close {
+  background-color: #C9434A !important;
+>>>>>>> Stashed changes
   color: white !important;
 }
 
@@ -39,7 +62,11 @@ html {
 }
 
 /*Styling for card headers on home page */
+<<<<<<< Updated upstream
 .home-page-header, #pet-search-buttons, #quiz-header, .modal-header {
+=======
+.home-page-header, #pet-search-buttons, #quiz-header {
+>>>>>>> Stashed changes
   background-color: #4A1A30 !important;
   padding: 15px !important;
   color: white !important;
@@ -88,8 +115,13 @@ label {
   }
 /* } */
 
+<<<<<<< Updated upstream
 /*Liked pets list and pet match results on saved pets page.*/
 .liked-pets-list, .saved-match-results {
+=======
+/*Liked pets list on saved pets page.*/
+.liked-pets-list {
+>>>>>>> Stashed changes
   margin-top: 30px;
 }
 
