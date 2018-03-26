@@ -29,11 +29,11 @@ https://pet-match-app.herokuapp.com/
   * [MVC design pattern](#about-mvc)
  
 ### <a name="how-app-works"></a> How the app works
-This project is a full stack application that helps simplify the pet adoption process. The application is meant to help connect you with animal shelters and rescue organizations and help you adopt a compatible pet in your area. 
+This project is a full stack application that helps simplify the pet adoption process. The application is meant to help connect you with animal shelters and rescue organization in your area. 
 
-After you log in to the app, you are taken to the home screen. When you get to the home screen of the app, you have two options. You can take a compatibility assessment that tries to match you with a pet based on your personality, preferences, and interests. After you take the quiz, you will get your results back, and you can use those results and the pet search feature to search for matching pets in your area. At the end of the quiz, you also have the option to save your results to view later, which saves them to the <b>My saved pets</b> page as well as to the MySQL database. 
+After you log in to the app, you are taken to the home screen. When you get to the home screen of the app, you have two options. You can take a compatibility assessment, which takes you through some questions and matches you with a pet based on your personality, preferences, and interests. After you take the quiz, you will get your results back, and you can use those results and the pet search feature to search for matching pets in your area. At the end of the quiz, you also have the option to save your results to view later, which saves them to the <b>My saved pets</b> page as well as to the MySQL database. 
 
-If you don't want to take an assessment, you can skip the quiz and go straight to the pet search page to search. When you are searching for pets, you can refine the search by gender, age, breed, and pet type. When you perform a search, the search results return the name, age, shelter ID, shelter contact information, and a short description about each pet. Also, you will notice that each pet has a <b>Like</b> button associated with it. If you like a pet that you see, click <b>Like</b> next to that pet. Liking a pet adds that pet's name and the shelter contact information to the database and to the <b>My saved pets</b> page. The <b>My saved pets</b> page contains both the assessment results (if you chose to save the results at the end of the assessment) and a list of liked pets. If you decide that you are no longer interested in a pet that you liked, you can removed the pet by clicking <b>Remove from list</b>, which deletes the pet from the user interface as well as from the MySQL database.
+If you don't want to take an assessment, you can skip the quiz and go straight to the pet search page to search. When you are searching for pets, you can refine the search by gender, age, breed, and pet type. When you perform a search, the search results return the name, age, shelter ID, shelter contact information, and a short description about each pet. Also, you will notice that each pet has a <b>Like</b> button associated with it. If you like a pet that you see, click <b>Like</b> next to that pet. Liking a pet adds that pet's name and the shelter contact information to the database and to the <b>My saved pets</b> page. The <b>My saved pets</b> page contains both the assessment results (if you chose to save the results at the end of the assessment) and a list of liked pets. If you decide that you are no longer interested in a pet that you liked, you can remove the pet by clicking <b>Remove from list</b>, which deletes the pet from the user interface as well as from the MySQL database.
 
 ### <a name="how-the-app-is-built"></a> How the app is built
 This project uses MySQL, Node.js, Express, Handlebars, Sequelize, and Semantic UI. Node and MySQL are used to query and route data in the application. Express is the backend web framework used for this application, and Handlebars is a templating language that is used to generate the HTML. Semantic UI is a CSS framework that is used to design and build the front end part of the site.
@@ -66,14 +66,14 @@ The following section will take you through the steps of setting up this applica
 If you don't want to set up this project locally and just want to see the deployed application, go to  https://pet-match-app.herokuapp.com/
 
 To set up this application locally on your computer, perform the following steps:
-  1. [Clone the repository](#clone-repository)
-  2. [Install Node.js](#install-node)
-  3. [Install the dependencies](#dependencies)
-  4. [Install MySQL Workbench](#install-mysql)
-  5. [Set up a development database](#database-setup)
-  6. [Create a .env file to store your MySQL Password](#create-env)
-  7. [Verify database connection information](#db-connect)
-  8. [Start the server](#start-server)
+1. [Clone the repository](#clone-repository)
+2. [Install Node.js](#install-node)
+3. [Install the dependencies](#dependencies)
+4. [Install MySQL Workbench](#install-mysql)
+5. [Set up a development database](#database-setup)
+6. [Create a .env file to store your MySQL Password](#create-env)
+7. [Verify database connection information](#db-connect)
+8. [Start the server](#start-server)
 
 ### <a name="clone-repository"></a> 1. Clone the repository
 The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
@@ -102,22 +102,19 @@ The first step is to clone the project repository to a local directory on your c
       <li><b>assets/css/style.css</b>: External CSS stylesheet.</li>
       <li><b>assets/img</b>: Contains the background image used in the application.</li>
       <li><b>assets/src/modals</b>: Contains the front end Javascript that opens the modals in the application.</li
-	  <li><b>assets/src/petDelete<b>: Contains the front end Javascript to delete a liked pet from the <b>My saved pets</b> page as well as delete the compatibility assessment results.</li>
-	  <li><b>assets/src/petSearch</b>: Contains the front end Javascript that allows a user to search for a pet. When a user fills outs the pet search form, a query is made to the Petfinder API based on the user input from the search form and the relevant pets are returned from the API and displayed to the user in the application user interface.</li>
-	  <li><b>assets/src/petMatch</b>: Contains the front end Javascript to run through the list of assessment questions and come up with a potential pet match for a user.</li
+	  <li><b>assets/src/petDelete</b>: Contains the front end Javascript to delete a liked pet from the <b>My saved pets</b> page as well as delete the compatibility assessment results.</li>
+	  <li><b>assets/src/petSearch</b>: Contains the front end Javascript that allows a user to search for a pet. When a user fills outs the pet search form, a query is made to the Petfinder API based on the user input from the search form. The matching pets are returned from the API and displayed to the user in the application user interface.</li>
+	  <li><b>assets/src/petMatch</b>: Contains the front end Javascript used to run through the list of assessment questions and come up with a potential pet match for a user.</li
     </ul>
   </li>
   <li>
-    <p><b>models</b>: Contains a file called <b>match.js</b>, which contains information used to manage the application data and interact with the database. The models describe the structure of the databagse tables, and the datatypes that eac column of the table can contain. For this project, the database includes two models:</p>
+    <p><b>models</b>: Contains a file called <b>match.js</b>, which contains information used to manage the application data and interact with the database. The models describe the structure of the database tables, and the datatypes that eac column of the table can contain. For this project, the database includes two models:</p>
 	<ul>
 		<li><b>match.js</b>: This defines the sequelize model for saving users' assessment results to the MySQL database. The model defines a database table that has two columns (one for the assessent results and one for the match rating).</li>
 		<li><b>pets.js</b>: This defines the sequelize model for saving any pets that the user likes to the MySQL database. The model defines a database table that includes columns for pet name, pet shelter location, shelter contact information, and whether or not the user likes the pet.</li>
   </li>
   <li>
-    <p><b>db</b>: Contains 2 files:</p>
-    <ul>
-      <li><b>schema.sql</b>: Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
-    </ul>
+    <p><b>db/schema.sql</b>:Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
   </li>
   <li>
     <p><b>config</b>: Contains the config.json file, whic includes the code to connect Node to MySQL.
@@ -126,10 +123,10 @@ The first step is to clone the project repository to a local directory on your c
     <p><b>controllers</b>: Contains two files.<p>
 		<ul>
 			<li><b>petMatchController.js</b>, which contains different routes for getting and posting user assessment results. These routes are used to pass information to and from the view and model objects.<li>
-			<li><b>savedPetsController.js</b>, which contains different routes for posting assessment results, posting liked pet information to the database, getting pet data from the database, and deleting liked pet information from the database.</li>
+			<li><b>savedPetsController.js</b>, which contains different routes for posting liked pet information to the database, getting pet data from the database, and deleting liked pet information from the database.</li>
 		</ul>
   <li>
-    <p><b>views</b>: Contains the Handlebars files, which are templates and small, resuable blocks of coded used to generate the html files.</p> 
+    <p><b>views</b>: Contains the Handlebars files, which are small, resuable blocks of code used to generate the HTML files.</p> 
   </li>
   <li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
   <li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
@@ -204,7 +201,7 @@ MYSQL_PASSWORD='<i>mysql_password</i>'
 <pre>
 nodemon server.js
 </pre>
-<p>If  you don't have nodemon installed on your computer, you can also start the server by running the following command. However, every time you make a change to the server, you will need to restart the servr to view the change in the user interface.</p>
+<p>If  you don't have nodemon installed on your computer, you can also start the server by running the following command. However, every time you make a change to the server, you will need to restart the server to view the change in the user interface.</p>
 <pre>node server.js</pre>
 <p>To verify that the server has started and the application is working locally on your computer, open Chrome and go to <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 
@@ -220,7 +217,7 @@ nodemon server.js
 <img src="readme_images/pet_assessment.png">
 <br>
 <br>
-<img src="readme_image/pet_question.png">
+<img src="readme_images/pet_question.png">
 <br>
 <br>
 
