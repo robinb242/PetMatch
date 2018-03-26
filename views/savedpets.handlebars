@@ -2,13 +2,14 @@
 <!--Navbar. With semantic UI, navbar is just called a menu.-->
 {{> pets/navbar-block}}  
  <div class="ui container"> 
-    <div class="ui two column grid stackable main-content-section center aligned">
-        <!--Header row-->
+    <div class="ui stackable two column grid center aligned">
         <div id="header">
             <h1 class="page-header">My saved pets<h1>
         </div>
-        <div class="row">
-             <div class="eight wide column">	
+    </div>
+    <div class="ui two column grid stackable main-content-section center aligned">
+        <div class="stretched row">
+             <div class="column">	
                 <div class="ui fluid card">
                     <div class="header home-page-header">
                         <h2>Pet compatibility assessment results</h2>
@@ -28,15 +29,7 @@
                     <div class="content">
                         {{> pets/pets-liked}}
                     </div>
-                </div>				
-                <div class="ui fluid card" id="liked-pets-card">
-                    <div class="header home-page-header">
-                        <h2>Liked pets list</h2>
-                    </div>
-                    <div class="content">
-                        {{> pets/pets-liked}}
-                    </div>
-                </div>                     
+                </div>				                    
             </div>
         </div>
     </div>

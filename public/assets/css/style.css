@@ -1,5 +1,5 @@
 /*Background image*/
-/*Stack overflow: https://css-tricks.com/perfect-full-page-background-image/*/
+/*CSS tricks: https://css-tricks.com/perfect-full-page-background-image/*/
 body {
   background-image: url('/assets/img/background.jpg') !important;
   background-repeat: no-repeat; 
@@ -44,9 +44,14 @@ html {
   color: white !important;
 }
 
-/*Quiz instructions*/
-#quiz-instructions {
+/*Quiz instructions text*/
+#quiz-instructions, {
   font-size: 24px !important;
+}
+
+/* Modal text size */
+.modal-content {
+  font-size: 20px !important;
 }
 
 /*Add margin in between the home page main content section and the top navigation bar */
@@ -85,10 +90,10 @@ label {
     padding: 20px !important;
     margin-top: 60px !important;
   }
-/* } */
+
 
 /*Liked pets list and pet match results on saved pets page.*/
-.liked-pets-list, .saved-match-results {
+ .liked-pets-list, .saved-match-results {
   margin-top: 30px;
 }
 
@@ -110,29 +115,27 @@ label {
 /*Font size of page headers*/
 .page-header {
   font-size: 30px !important;
+  margin-top:  20px !important;
 }
 
-/*Sticky footer*/
-/* .ui.segment {
-  position: absolute !important;
-  bottom: 0px !important;
-  width: 100% !important;
-}
-Sticky Footer
-body {
-  display: flex;
+/* Sticky footer*/
+/*https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/*/
+/*https://github.com/Semantic-Org/Semantic-UI/issues/2882*/
+.Site {
+  /* display: flex; */
   min-height: 100vh;
   flex-direction: column;
 }
-main {
-  flex: 1 0 auto;
-  margin-top: 50px;
+
+.main-content-section {
+  flex: 1;
+  min-height: 100vh;
 }
-.ui.segment {
-position: absolute !important;
- bottom: 0px !important;
- width: 100% !important; 
-}
+
+
+
+  
+  
 
 
 
