@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         pet_rating: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         }
     });
     return Match;

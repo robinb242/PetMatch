@@ -209,6 +209,7 @@ var userRating;
 //Get user rating from match results.
 $('.ui.rating')
 .rating({
+    initialRating: 3,
     maxRating: 5,
     onRate: function (rating) {
         console.log(rating)
@@ -219,37 +220,40 @@ $('.ui.rating')
 
 //Click event for saving quiz results
 $("#save-results").on("click", function() {
-    console.log("save results button clicked");
-    //Display success message to tell user results were saved successfully.
-    $.uiAlert({
-        textHead: 'Results saved successfully.', // header
-        text: 'Click My saved pets at the top of the page to view your results.', // Text
-        bgcolor: '#C9434A', // background-color
-        textcolor: '#fff', // color
-        position: 'bottom-center',// position . top And bottom ||  left / center / right
-        icon: 'heart', // icon in semantic-UI
-        time: 4, // time
-            })
+
+        console.log("save results button clicked");
+        //Display success message to tell user results were saved successfully.
+        
+        var newMatch = $("#thePet").data("match");
+        //Grab pet name
+        //When user clicks save results, save the match results to the database.
+        var newMatch = {
+            pet_match: $("#thePet").data('match'),
+            pet_rating: userRating,
+        };
     
-    var newMatch = $("#thePet").data("match");
-    //Grab pet name
-    //When user clicks save results, save the match results to the database.
-    var newMatch = {
-        pet_match: $("#thePet").data('match'),
-        pet_rating: userRating,
-    };
+        //debuggging
+        console.log(newMatch);
+    
+        // Send the POST request using ajax.
+        $.ajax("/api/matches", {
+            type: "POST",
+            data: newMatch
+        }).then(
+        function() {
+            console.log("added match results");
+        }); 
 
-    //debuggging
-    console.log(newMatch);
-
-    // Send the POST request using ajax.
-    $.ajax("/api/matches", {
-        type: "POST",
-        data: newMatch
-    }).then(
-    function() {
-        console.log("added match results");
-    });      
+        $.uiAlert({
+            textHead: 'Results saved successfully.', // header
+            text: 'Click My saved pets at the top of the page to view your results.', // Text
+            bgcolor: '#C9434A', // background-color
+            textcolor: '#fff', // color
+            position: 'bottom-center',// position . top And bottom ||  left / center / right
+            icon: 'heart', // icon in semantic-UI
+            time: 4, // time
+        })
+   
 });
 
 //GET the user's saved quiz results from the database and display the results on the saved pets page so that the user can view the results later.
