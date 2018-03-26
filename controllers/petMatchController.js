@@ -42,7 +42,7 @@ module.exports = function(app) {
         
     app.get("/api", function (req, res) {
         // console.log("TESTER!!!!" + myPet[0] + myPet[1]);
-        res.json(myPet);
+        res.json(myPet[0]);
         });
         
         app.post("/api/new", function (req, res) {       
@@ -52,7 +52,7 @@ module.exports = function(app) {
         });
         
         function grabInfo() {
-            if (counter <= 2) {
+            if (counter <= 19) {
                 myPet = [];
                 absoluteArray = [];
                 dummy = [];
@@ -76,7 +76,7 @@ module.exports = function(app) {
             
             counter++
             
-            if (counter <= 2) {
+            if (counter <= 19) {
                 grabInfo();
             }
             else {

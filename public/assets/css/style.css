@@ -24,12 +24,12 @@ html {
   /*https://coolors.co/1572bf-4fe5c8-024699-1ab6cd-8cee8b*/
   /*https://coolors.co/db6c6d-7c415b-d84f49-55504d-9a4c48*/
   /*https://coolors.co/c9434a-52382b-df8b80-b9575a-4a1a30*/
-  background-color: #4A1A30 !important;
+  background-color: #672729 !important;
 }
 
 /*Have consistent color for buttons throughout the UI.*/
 #take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results, #delete-match-results, .delete-pet-confirmed {
-  background-color: #C9434A !important;
+  background-color: #672729 !important;
   color: white !important;
 }
 
@@ -79,14 +79,14 @@ label {
 
 /*footer styling*/
 /*https://stackoverflow.com/questions/32152442/semantic-ui-footer-at-the-end*/
-@media (min-height: 320px) {
+/* @media (min-height: 320px) { */
   .app-footer { 
     position: absolute;
     bottom: 0 !important;
     padding: 20px !important;
     margin-top: 60px !important;
   }
-}
+/* } */
 
 /*Liked pets list and pet match results on saved pets page.*/
 .liked-pets-list, .saved-match-results {
@@ -112,3 +112,26 @@ label {
 .page-header {
   font-size: 30px !important;
 }
+
+/*Sticky footer*/
+/* .ui.segment {
+  position: absolute !important;
+  bottom: 0px !important;
+  width: 100% !important;
+}
+
+
+
+Sticky Footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  margin-top: 50px;
+}
+
+
