@@ -72,7 +72,7 @@ $("#question-div").hide();
 $("#quiz-progress-bar").hide();
 
 //When start quiz button is clicked, start quiz.
-$("#start-quiz-btn").on("click", function() {
+$("#start-quiz-btn").on("click", function() {    
 	start();
 });
 
