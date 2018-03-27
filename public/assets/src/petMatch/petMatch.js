@@ -16,6 +16,15 @@ var scoresArray = [];
 //Create variable to hold user quiz values.
 var userQuizValues = [];
 
+var findMatchPets;
+
+//Construct query URL to get pet data from petfinder API to return matching pets.
+var queryURL = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=";
+var queryURL2;
+
+//Create variable for LIKE button so that we can create it using jQuery.
+var likeBtn;
+
 //Create variable to hold all questions.
 //In binary, 1 is true. 0 is false.
 var questionSet = {
@@ -260,6 +269,9 @@ $("#save-results").on("click", function() {
 $.get("/api/matches", function(matchData) {
     console.log(matchData);
     for (var i=0; i < matchData.length; i++) {
+        //Search for pets related to matching pet.
+        findMatchPets = $("<button>");
+        findMatchPets.addClass("find-matching-pets ui button").text("Find matching pets").attr("data-name", matchData[i].pet_match);
         //Create div to hold user's saved pet match results.
         var savedMatchResults = $("<div>");
         savedMatchResults.attr("id", matchData[i].pet_match + "-" + i).addClass("saved-match-results");
@@ -269,8 +281,156 @@ $.get("/api/matches", function(matchData) {
         var savedPetMatchRating = $("<p>");
         savedPetMatchName.text("Your match: " + matchData[i].pet_match);
         savedPetMatchRating.text("Your rating: " + matchData[i].pet_rating);
-        savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating);
+        savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating).append(findMatchPets);
+        //Click event for finding matching pets.
+        $(".find-matching-pets").on("click", function() {
+            //Open find matching pets modal.
+            $('#find-matching-pets-modal')
+            .modal('show')
+            //Query URL construction.
+            //queryURL2 = queryURL + $(this).data("name");
+            queryURL2 = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=Retriever&f&format=json";
+            console.log(queryURL2);
+            //show search results.
+            findMatchingPets(queryURLBase2); 
+            $("#matchingPet").text($(this).data("name"));
+        })
     }
-    });
+});
+
+    //Start search function
+//     function findMatchingPets(queryURL2) {
+//     //From petfinder API documentation:
+//     //The Petfinder API supports JSONP for cross-domain JavaScript requests. When making any request that is in JSON format, the callback parameter may be added to denote that this is a JSONP request. The value for the callback parameter should be a unique string.
+//     //Here the callback=? query string parameter is required to specify that it is a JSONP call. jQuery will replace the '?' within the query string with a unique time-stamped value (i.e. 'jQuery110206092635430395603_1391456463806').
+//     $.getJSON(queryURL2, function(petData){
+//         //response data are now in the petData variable
+//         console.log(petData);
+//         //Example of how to retrieve a specific pet's age:
+//         //console.log(petData.petfinder.pets.pet[0].age.$t)
+
+//         for (var i = 0; i < petData.petfinder.pets.pet.length; i++) {
+//         //Create a div for each pet returned from the petfinder API.
+//         var petProfile = $("<div>");
+//         //Create a card for each pet returned from the petfinder API.
+//         petProfile.addClass("ui card fluid search-card");
+//         //Append each pet profile to the search results section of the search page.
+//         $("#matching-pet-results").append(petProfile);
+//         //Dynamically create like and not interested buttons at top of each pet profile card.
+//         likeBtnDiv = $("<div>")
+//         //Create div inside of the pet profile card to hold the buttons.
+//         likeBtnDiv.addClass("extra content").attr("id", "pet-search-buttons");
+//         //Create span element to hold the dislike button.
+//         // dislikeBtnSpan = $("<span>");
+//         // dislikeBtnSpan.addClass("left floated like").attr("id", "dislike-btn-span");
+//         //Create span element to hold the like button.
+//         var likeBtnSpan = $("<span>");
+//         likeBtnSpan.addClass("right floated star").attr("id", "dislike-btn-span");
+//         //Append the like buttons and not interested buttons to the pet profile card.
+//         likeBtnDiv.append(likeBtnSpan);
+//         petProfile.append(likeBtnDiv);
+//        // Create buttons (likeBtn, dislikeBtn).
+//         likeBtn = $("<button>");
+//         // dislikeBtn = $("<button>");
+//         //Add semantic UI styling to the buttons.
+//         likeBtn.addClass("ui button likeBtn");
+//         // dislikeBtn.addClass("ui teal button dislikeBtn")
+//         //Give each button a data attribute called data-choice.
+//         likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t);
+//         //Then give each button text.
+//         // dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
+//         likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
+//         //Append likeBtn to like-btn-span so that it appears in card.
+//         likeBtnSpan.append(likeBtn);
+//         //Append dislikeBtn to dislike-btn-span so that it appears in card.
+//         // dislikeBtnSpan.append(dislikeBtn);
+
+//         //Create a div to hold information about each pet, such as name, age, location, and description.
+//         var petDetailsDiv = $("<div>");
+//         petDetailsDiv.addClass("content").attr("id", "pet-search-details-" + i);
+
+//         //Append the pet information to the pet profile for each pet.
+//         petProfile.append(petDetailsDiv);
+
+//         //Pet description button
+//         // var petDescBtn = $("<btn>");
+//         // petDescBtn.addClass("ui button petDescBtn").attr("id", "pet-desc-" + i).text("More information");
+
+//         //pet name.
+//         var petName = $("<h4>")
+//         petName.attr("id", "pet-name");
+
+//         //pet age.
+//         var petAge = $("<h4>");
+//         petAge.attr("id", "pet-age");
+
+//         //pet location/shelter id.
+//         var petLocation = $("<h4>");
+//         petLocation.attr("id", "pet-city");
+
+//         //pet description.
+//         var petDescription = $("<h4>");
+//         petDescription.attr("id", "pet-trained");
+
+//         //Shelter contact info
+//         var shelterEmail = $("<h4>");
+//         shelterEmail.attr("id", "shelter-email");
+
+//         //pet photo
+//         var petPhoto = $("<img>");
+//         petPhoto.addClass("left floated");
+//         petPhoto.attr("src", petData.petfinder.pets.pet[i].media.photos.photo[2].$t);
+
+//         //Grab the pet name, age, location, and description data from the petfinder API.
+//         petName.append(petData.petfinder.pets.pet[i].name.$t);
+//         petAge.append("Age: " + petData.petfinder.pets.pet[i].age.$t);
+//         petLocation.append("Shelter: " + petData.petfinder.pets.pet[i].shelterId.$t);
+//         shelterEmail.append("Shelter contact information: " + petData.petfinder.pets.pet[i].contact.email.$t);
+//         petDescription.append("Description: " + petData.petfinder.pets.pet[i].description.$t);
+//         likeBtnDiv.append(petName);
+//         petDetailsDiv.append(petAge).append(petLocation).append(shelterEmail).append(petDescription);
+//         petDetailsDiv.append(petPhoto);
+
+//         //Click event for liking a pet.
+//         $(likeBtn).on("click", function() {
+//             console.log("liked button clicked");
+//             //Display success message when user likes a pet.
+//             $.uiAlert({
+//                 textHead: 'You liked ' + $(this).data('name') + ".", // header
+//                 text: 'Click My saved pets at the top of the page to view your liked pets.', // Text
+//                 bgcolor: '#C9434A', // background-color
+//                 textcolor: '#fff', // color
+//                 position: 'bottom-center',// position . top And bottom ||  left / center / right
+//                 icon: 'heart', // icon in semantic-UI
+//                 time: 4, // time
+//                   })
+
+//             var newLike = $(this).data("newlike");
+//             //Grab pet name
+//             //When user likes a pet, set liked state to true
+//             var newPet = {
+//                 pet_name: $(this).data('name'),
+//                 pet_shelter: $(this).data('shelter'),
+//                 pet_email: $(this).data('email'),
+//                 liked: true
+//             };
+
+//             console.log(newPet);
+
+//             // Send the POST request using ajax.
+//             $.ajax("/api/pets", {
+//                 type: "POST",
+//                 data: newPet
+//             }).then(
+//             function() {
+//                 console.log("added pet");
+//                 // Reload the page to get the updated list
+//                 //location.reload();
+//             });
+//         });
+
+// }
+// });
+// }
 
 
