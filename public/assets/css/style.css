@@ -137,7 +137,10 @@ label {
   height: 200px;
 }
 
-
+/*Remove from list button on the my saved pets page*/
+.delete-pet {
+  margin-top: 10px !important;
+}
 
 
 
