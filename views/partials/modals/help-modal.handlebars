@@ -1,19 +1,62 @@
+<!--App Help available from the menu-->
 <div class="ui modal" id="help-modal">
-  <i class="close icon"></i>
-  <div class="header">
+  <div class="header modal-header">
     Help
   </div>
-  <div class="image content">
-    <div class="ui medium image">
-    </div>
+  <div class="content">
     <div class="description">
-      <div class="ui header"></div>
-      <p></p>
-      <p></p>
+        <div class="ui styled accordion">
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            How do I search for pets in my area?
+          </div>
+          <div class="content">
+            <p class="transition hidden">
+              You can search for pets by clicking <b>Search pets</b> on the <b>Home</b> page or by clicking <b>Browse</b>
+              from the top navigation bar.</p>
+            <p>When you get to the <b>Search for the perfect</b> page, you can search for pets by pet type (Cat or Dog), the breed of the pet you are looking for, the gender of the pet, your zip code, and the age of the pet (Baby, Young, Adult, or Senior).</p>
+            <p>The search results return the name, age, and description of the pet along with a photo. Searching for a pet also gives you the shelter location and contact information so that you can connect with the shelter later on to find more about their adoption process.</p>
+          </div>
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            How do I like a pet?
+          </div>
+          <div class="content">
+            <p>If you are searching for a pet and you come across one that you might want to adopt, you can save the pet to your <b>Liked pets list</b>. To save a pet to your <b>Liked pets list</b>, click <b>Like</b> next to the pet that you want to save.</p>
+            <p>When you save a pet, that pet along with the shelter contact information is saved to your <b>My saved pets</b> page.</p>
+          </div>
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            I found a pet in this app that I want. How do I adopt it?
+          </div>
+          <div class="content">
+            <p>AdoptMeNow is not an animal or rescue organization. If you have a specific question about the adoption process for a particular pet that you find using this app, contact the organization directly.</p>
+          </div>
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            I took the pet compatibility quiz. What do I do with the results?
+          </div>
+          <div class="content">
+            <p>After you take the compatibility quiz, click <b>View results</b> and ensure that you save the results by clicking <b>SAVE RESULTS</b>. Saving your results saves your suggested pet to the <b>My saved pets</b> page so that you can view the results later. After you take the quiz, also be sure to rate your match on a scale of 1 (not very accurate) to 5 (spot on). We always appreciate your feedback.</p>
+          </div>
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            How do I remove a pet that I liked?
+          </div>
+          <div class="content">
+            <p>To remove a pet that you liked, go to the <b>My saved pets</b> page and click the <b>Remove from list</b> button next to the pet that you want to remove from the <b>Liked pets list</b>.</p>
+          </div>
+        </div>
     </div>
   </div>
+
   <div class="actions">
-    <div class="ui black deny button">
+    <div class="ui deny button" id="help-close">
       CLOSE
     </div>
   </div>
