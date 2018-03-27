@@ -54,7 +54,8 @@ module.exports = function(app) {
             pet_name: req.body.pet_name,
             pet_shelter: req.body.pet_shelter,
             pet_email: req.body.pet_email,
-            liked: 1
+            liked: 1,
+            pet_photo: req.body.pet_photo
     }).then(function(results) {
         console.log(results);
         //results here would be the newly created pet

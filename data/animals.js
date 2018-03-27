@@ -19,7 +19,7 @@ var animal = [
     Energetic: 2,
     Clean: 1,
     catorDog: 2,
-    bio: ""
+    bio: "You would prefer a cat that is very active and intelligent. Keeping a cat like this occupied and busy is an enjoyable part of your day. Variety keeps things interesting. You don't mind a cat that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate cat that will snuggle with you, but you don't want a cat that is always in your face trying to get attention. A cat that is intuitive about your feelings would be ideal."
   },
   {
     routeName: "dog",
@@ -36,7 +36,7 @@ var animal = [
     Energetic: 5,
     Clean: 2,
     catorDog: 1,
-    bio: ""
+    bio: "You would prefer a dog that is very active and intelligent. Keeping a dog like this occupied and busy is an enjoyable part of your day. You like a dog that is fairly easy to train to basic commands and a few fun tricks. He should be able to focus his attention long enough to learn and interact with you, but it's also OK if he decides to be distracted once in a while. Variety keeps things interesting. You don't mind a dog that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate dog that will snuggle with you, but you don't want a dog that is always in your face trying to get attention. A dog that is intuitive about your feelings would be ideal."
   },
   {
     routeName: "dog",
@@ -53,7 +53,7 @@ var animal = [
     Energetic: 1,
     Clean: 2,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a confident dog who is a natural born leader of the pack. He’s a team player and more than ready to take charge of a situation. A confident dog can be dominant. Harsh discipline or training methods could cause him to show aggressive tendencies or become more willful. This dog feels secure in his surroundings, and has a self-assuredness that shows in his body language."
   },
   {
     routeName: "dog",
@@ -70,7 +70,7 @@ var animal = [
     Energetic: 2,
     Clean: 4,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a dog that is very active and intelligent. Keeping a dog like this occupied and busy is an enjoyable part of your day. You like a dog that is fairly easy to train to basic commands and a few fun tricks. He should be able to focus his attention long enough to learn and interact with you, but it's also OK if he decides to be distracted once in a while. Variety keeps things interesting. You don't mind a dog that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate dog that will snuggle with you, but you don't want a dog that is always in your face trying to get attention. A dog that is intuitive about your feelings would be ideal."
   },
   {
     routeName: "dog",
@@ -87,7 +87,7 @@ var animal = [
     Energetic: 2,
     Clean: 4,
     catorDog: 0,
-    bio: ""
+    bio: "You enjoy light activity with your dog such as a walk around the block or a game of fetch. You prefer a dog that is content to just hang out a big part of the day with little bursts of activity every now and then. You like a dog that is a little spontaneous. A dog that can create his own new games on a whim and who doesn't obsess over a single toy or bone. You don't mind that he may not have the level of focus needed to do advanced training. Learning basic commands is all You want a dog that is confident , but you don't mind taking a few minutes for your dog to check out a new person or place before he is relaxed. . You like a dog that is very independent and can be a great companion with needing constant reassurance. You want him to be loyal to you and show his love in ways other than kisses and cuddles."
   },
   {
     routeName: "dog",
@@ -104,7 +104,7 @@ var animal = [
     Energetic: 5,
     Clean: 2,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a confident dog who is a natural born leader of the pack. He’s a team player and more than ready to take charge of a situation. A confident dog can be dominant. Harsh discipline or training methods could cause him to show aggressive tendencies or become more willful. This dog feels secure in his surroundings, and has a self-assuredness that shows in his body language."
   },
   {
     routeName: "dog",
@@ -121,7 +121,7 @@ var animal = [
     Energetic: 3,
     Clean: 3,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a shy/timid dog that needs an owner who can give calm, consistent and patient understanding, with a sensitivity to his needs and feelings. A shy dog doesn’t like being in uncomfortable situations or around sudden or loud noises. Yelling and harsh training methods or discipline can cause this type of personality to shut down, and you risk losing his trust. Heavy handed treatment can push this dog to become more insecure, fearful or aggressive. It’s important to give a shy/timid dog plenty of opportunities to succeed to help boost his self confidence, and daily exercise to stimulate his mind. Reward him with some dog treats and lots of praise for each success. He needs reassurance from the one he loves to feel safe and secure."
   },
   {
     routeName: "dog",
@@ -138,7 +138,7 @@ var animal = [
     Energetic: 1,
     Clean: 4,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer an adaptable dog that is eager to please, and very easy to train. Not as outgoing as other dogs, this dog gets along well with other dogs, cats and people. He’s perfectly happy to follow the commands of his owner, who he sees as his leader. This is an easy to control dog – cooperative, gentle and affectionate – that makes a great family pet. The adaptable personality would be a good candidate as a therapy dog."
   },
   {
     routeName: "dog",
@@ -155,7 +155,7 @@ var animal = [
     Energetic: 1,
     Clean: 5,
     catorDog: 0,
-    bio: ""
+    bio: "You enjoy light activity with your dog such as a walk around the block or a game of fetch. You prefer a dog that is content to just hang out a big part of the day with little bursts of activity every now and then. You like a dog that is a little spontaneous. A dog that can create his own new games on a whim and who doesn't obsess over a single toy or bone. You don't mind that he may not have the level of focus needed to do advanced training. Learning basic commands is all You want a dog that is confident , but you don't mind taking a few minutes for your dog to check out a new person or place before he is relaxed. . You like a dog that is very independent and can be a great companion with needing constant reassurance. You want him to be loyal to you and show his love in ways other than kisses and cuddles."
   },
   {
     routeName: "dog",
@@ -172,7 +172,7 @@ var animal = [
     Energetic: 2,
     Clean: 3,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer an adaptable dog that is eager to please, and very easy to train. Not as outgoing as other dogs, this dog gets along well with other dogs, cats and people. He’s perfectly happy to follow the commands of his owner, who he sees as his leader. This is an easy to control dog – cooperative, gentle and affectionate – that makes a great family pet. The adaptable personality would be a good candidate as a therapy dog."
   },
   {
     routeName: "cat",
@@ -189,7 +189,7 @@ var animal = [
     Energetic: 2,
     Clean: 3,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a a laid back, happy cat who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Cats with a happy personality are apt to get into trouble. This cat can become overly excited, especially around children."
   },
   {
     routeName: "cat",
@@ -206,7 +206,7 @@ var animal = [
     Energetic: 1,
     Clean: 5,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a a laid back, happy cat who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Cats with a happy personality are apt to get into trouble. This cat can become overly excited, especially around children."
   },
   {
     routeName: "dog",
@@ -223,7 +223,7 @@ var animal = [
     Energetic: 3,
     Clean: 2,
     catorDog: 1,
-    bio: ""
+    bio: "You would prefer a a laid back, happy dog who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Dogs with a happy personality that haven’t been taught basic commands, like sit or down, are apt to get into trouble for jumping up on people when they greet them. This dog can become overly excited, especially around children, and a large dog could scare them."
   },
   {
     routeName: "dog",
@@ -240,7 +240,7 @@ var animal = [
     Energetic: 5,
     Clean: 2,
     catorDog: 1,
-    bio: ""
+    bio: "You would prefer a a laid back, happy dog who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Dogs with a happy personality that haven’t been taught basic commands, like sit or down, are apt to get into trouble for jumping up on people when they greet them. This dog can become overly excited, especially around children, and a large dog could scare them."
   },
   {
     routeName: "dog",
@@ -257,7 +257,7 @@ var animal = [
     Energetic: 3,
     Clean: 2,
     catorDog: 1,
-    bio: ""
+    bio: "You would prefer a a laid back, happy dog who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Dogs with a happy personality that haven’t been taught basic commands, like sit or down, are apt to get into trouble for jumping up on people when they greet them. This dog can become overly excited, especially around children, and a large dog could scare them."
   },
   {
     routeName: "dog",
@@ -274,7 +274,7 @@ var animal = [
     Energetic: 2,
     Clean: 3,
     catorDog: 1,
-    bio: ""
+    bio: "You would prefer a a laid back, happy dog who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Dogs with a happy personality that haven’t been taught basic commands, like sit or down, are apt to get into trouble for jumping up on people when they greet them. This dog can become overly excited, especially around children, and a large dog could scare them."
   },
   {
     routeName: "dog",
@@ -291,7 +291,7 @@ var animal = [
     Energetic: 2,
     Clean: 1,
     catorDog: 2,
-    bio: ""
+    bio: "You would prefer a a laid back, happy dog who is always ready to greet everyone he meets, whether he knows them or not. He gets along well with other dogs and cats. Dogs with a happy personality that haven’t been taught basic commands, like sit or down, are apt to get into trouble for jumping up on people when they greet them. This dog can become overly excited, especially around children, and a large dog could scare them."
   },
   {
     routeName: "cat",
@@ -308,7 +308,7 @@ var animal = [
     Energetic: 2,
     Clean: 3,
     catorDog: 2,
-    bio: ""
+    bio: "You would prefer a cat that is very active and intelligent. Keeping a cat like this occupied and busy is an enjoyable part of your day. Variety keeps things interesting. You don't mind a cat that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate cat that will snuggle with you, but you don't want a cat that is always in your face trying to get attention. A cat that is intuitive about your feelings would be ideal."
   },
   {
     routeName: "cat",
@@ -325,7 +325,7 @@ var animal = [
     Energetic: 2,
     Clean: 4,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a cat that is very active and intelligent. Keeping a cat like this occupied and busy is an enjoyable part of your day. Variety keeps things interesting. You don't mind a cat that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate cat that will snuggle with you, but you don't want a cat that is always in your face trying to get attention. A cat that is intuitive about your feelings would be ideal."
   },
   {
     routeName: "cat",
@@ -342,7 +342,7 @@ var animal = [
     Energetic: 2,
     Clean: 2,
     catorDog: 0,
-    bio: ""
+    bio: "You would prefer a cat that is very active and intelligent. Keeping a cat like this occupied and busy is an enjoyable part of your day. Variety keeps things interesting. You don't mind a cat that is a bit fearful in new situations or around new people. You can be patient and take the time to teach him that there is nothing to fear. You prefer an affectionate cat that will snuggle with you, but you don't want a cat that is always in your face trying to get attention. A cat that is intuitive about your feelings would be ideal."
   }
   ];
 

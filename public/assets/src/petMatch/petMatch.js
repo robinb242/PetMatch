@@ -63,12 +63,12 @@ var questionSet = {
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
         values: ["1", "2", "3", "4", "5"]
         }, {
-        question: "I always keep my house clean and organized.",
+        question: "My house is clean.",
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
         values: ["1", "2", "3", "4", "5"]
         }, {
-        question: "I would like a pet other than a cat or dog.",
-        choices: ["AGREE", "DISAGREE"],
+        question: "What describes you best?",
+        choices: ["Sensitive", "Tough"],
         values: ["1", "0"]
         }
     ]
@@ -270,7 +270,10 @@ $.get("/api/matches", function(matchData) {
     console.log(matchData);
     for (var i=0; i < matchData.length; i++) {
         //Search for pets related to matching pet.
+        findMatchPetsLink = $("<a>");
+        findMatchPetsLink.attr("href", "petsearch");
         findMatchPets = $("<button>");
+        findMatchPetsLink.append(findMatchPets);
         findMatchPets.addClass("find-matching-pets ui button").text("Find matching pets").attr("data-name", matchData[i].pet_match);
         //Create div to hold user's saved pet match results.
         var savedMatchResults = $("<div>");
@@ -281,7 +284,7 @@ $.get("/api/matches", function(matchData) {
         var savedPetMatchRating = $("<p>");
         savedPetMatchName.text("Your match: " + matchData[i].pet_match);
         savedPetMatchRating.text("Your rating: " + matchData[i].pet_rating);
-        savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating).append(findMatchPets);
+        savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating).append(findMatchPetsLink);
         //Click event for finding matching pets.
         // $(".find-matching-pets").on("click", function() {
         //     //Open find matching pets modal.

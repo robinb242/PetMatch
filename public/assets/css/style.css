@@ -132,6 +132,16 @@ label {
   min-height: 100vh;
 }
 
+/*Size of pet photo on the my saved pets page*/
+.pet-photo {
+  height: 200px;
+}
+
+/*Remove from list button on the my saved pets page*/
+.delete-pet {
+  margin-top: 10px !important;
+}
+
 
 
   

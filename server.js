@@ -33,7 +33,6 @@ app.set("view engine", "handlebars");
 require("./controllers/petMatchController.js")(app);
 require("./controllers/savedPetsController.js")(app);
 
-//test
 
 //App is listening...
 db.sequelize.sync().then(function() {

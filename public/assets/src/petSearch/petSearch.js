@@ -143,7 +143,7 @@ function startSearchRequest(queryURL) {
         likeBtn.addClass("ui button likeBtn");
         // dislikeBtn.addClass("ui teal button dislikeBtn")
         //Give each button a data attribute called data-choice.
-        likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t);
+        likeBtn.attr("data-name", petData.petfinder.pets.pet[i].name.$t).attr("data-shelter", petData.petfinder.pets.pet[i].shelterId.$t).attr("data-email", petData.petfinder.pets.pet[i].contact.email.$t).attr("data-photo", petData.petfinder.pets.pet[i].media.photos.photo[2].$t) ;
         //Then give each button text.
         // dislikeBtn.html("<i class='thumbs down outline icon'>" + "</i>" + "Not interested");
         likeBtn.html("<i class='heart outline icon'>" + "</i>" + "Like");
@@ -209,7 +209,7 @@ function startSearchRequest(queryURL) {
                 textcolor: '#fff', // color
                 position: 'bottom-center',// position . top And bottom ||  left / center / right
                 icon: 'heart', // icon in semantic-UI
-                time: 4, // time
+                time: 3, // time
                   })
 
             var newLike = $(this).data("newlike");
@@ -219,7 +219,8 @@ function startSearchRequest(queryURL) {
                 pet_name: $(this).data('name'),
                 pet_shelter: $(this).data('shelter'),
                 pet_email: $(this).data('email'),
-                liked: true
+                liked: true,
+                pet_photo:  $(this).data('photo')
             };
 
             console.log(newPet);
