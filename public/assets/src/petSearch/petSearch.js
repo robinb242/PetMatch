@@ -5,9 +5,6 @@ var queryURLBase2;
 //Create variable for LIKE button so that we can create it using jQuery.
 var likeBtn;
 
-//Create variable for DISLIKE button so that we can create it using jQuery.
-var dislikeBtn;
-
 //Hide search results until user clicks search
 $(".search-card").hide();
 
@@ -85,8 +82,16 @@ $("#search-btn").on("click", function() {
         ;
             console.log(allFields);
 
+            //Replace all spaces in the breed name with a plus (+) sign.
+            //https://stackoverflow.com/questions/3794919/replace-all-spaces-in-a-string-with
+            var petBreed = allFields.breed;
+            var replacedBreed = petBreed.split(' ').join('+');
+            console.log(replacedBreed);
+
+
+
         //Query URL construction.
-        queryURLBase2 = queryURLBase + allFields.petType + "&location=" + allFields.zipCode + "&sex=" + allFields.gender + "&breed=" + allFields.breed + "&age=" + allFields.petAge + "&f&format=json&callback=?";
+        queryURLBase2 = queryURLBase + allFields.petType + "&location=" + allFields.zipCode + "&sex=" + allFields.gender + "&breed=" + replacedBreed + "&age=" + allFields.petAge + "&f&format=json&callback=?";
         console.log(queryURLBase2);
 
         //Clear search fields after user clicks search.

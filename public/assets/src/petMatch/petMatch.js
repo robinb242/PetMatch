@@ -260,7 +260,7 @@ $("#save-results").on("click", function() {
             textcolor: '#fff', // color
             position: 'bottom-center',// position . top And bottom ||  left / center / right
             icon: 'heart', // icon in semantic-UI
-            time: 4, // time
+            time: 3, // time
         })
    
 });
