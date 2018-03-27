@@ -35,7 +35,7 @@ require("./controllers/savedPetsController.js")(app);
 
 
 //App is listening...
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
   });
