@@ -131,12 +131,12 @@ The first step is to clone the project repository to a local directory on your c
     <p><b>models</b>: Contains information used to manage the application data and interact with the database. The models describe the structure of the database tables, and the datatypes that each column of the table can contain. For this project, the database includes two models:</p>
 	<ul>
 		<li><p><b>match.js</b>: This defines the sequelize model for saving users' assessment results to the MySQL database. The model defines a database table that has two columns (one for the assessent results and one for the match rating).</p>
-    <img src="readme_images/match_model.png">
     </li>
+      <img src="readme_images/match_model.png">
 
 		<li><p><b>pets.js</b>: This defines the sequelize model for saving any pets that the user likes to the MySQL database. The model defines a database table that includes columns for pet name, pet shelter location, shelter contact information, and whether or not the user likes the pet.</p>
-    <img src="readme_images/pet_model.png">
     </li>
+    <img src="readme_images/pet_model.png">
   <li>
     <p><b>db/schema.sql</b>: Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
   </li>
