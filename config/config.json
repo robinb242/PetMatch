@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Fenway#1",
+    "password": "",
     "database": "petMatchDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
