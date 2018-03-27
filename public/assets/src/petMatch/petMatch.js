@@ -33,7 +33,7 @@ var questionSet = {
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
         values: ["1", "2", "3", "4", "5"]
         }, {
-        question:  "I would like to have a pet that enjoys being outdoors and and that would like exercising with me.",
+        question:  "I would like to have a pet that would like exercising with me.",
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
         values: ["1", "2", "3", "4", "5"]
         }, {
@@ -50,7 +50,7 @@ var questionSet = {
         choices: ["1 (STRONGLY DISAGREE)", "2", "3", "4", "5 (STRONGLY AGREE)"],
         values: ["1", "2", "3", "4", "5"]
         }, {
-        question: "I have a big backyard.",
+        question: "I would prefer a pet that likes being outdoors.",
         choices: ["YES", "NO"],
         values: ["1", "0"]
         }, {
