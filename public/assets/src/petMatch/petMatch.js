@@ -19,8 +19,8 @@ var userQuizValues = [];
 var findMatchPets;
 
 //Construct query URL to get pet data from petfinder API to return matching pets.
-var queryURL = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=";
-var queryURL2;
+// var queryURL = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=";
+// var queryURL2;
 
 //Create variable for LIKE button so that we can create it using jQuery.
 var likeBtn;
@@ -283,18 +283,18 @@ $.get("/api/matches", function(matchData) {
         savedPetMatchRating.text("Your rating: " + matchData[i].pet_rating);
         savedMatchResults.append(savedPetMatchName).append(savedPetMatchRating).append(findMatchPets);
         //Click event for finding matching pets.
-        $(".find-matching-pets").on("click", function() {
-            //Open find matching pets modal.
-            $('#find-matching-pets-modal')
-            .modal('show')
-            //Query URL construction.
-            //queryURL2 = queryURL + $(this).data("name");
-            queryURL2 = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=Retriever&f&format=json";
-            console.log(queryURL2);
-            //show search results.
-            findMatchingPets(queryURLBase2); 
-            $("#matchingPet").text($(this).data("name"));
-        })
+        // $(".find-matching-pets").on("click", function() {
+        //     //Open find matching pets modal.
+        //     $('#find-matching-pets-modal')
+        //     .modal('show')
+        //     //Query URL construction.
+        //     //queryURL2 = queryURL + $(this).data("name");
+        //     queryURL2 = "https://api.petfinder.com/pet.find?key=98d54d4a2d02242de8d84d2171223995&breed=Retriever&f&format=json";
+        //     console.log(queryURL2);
+        //     //show search results.
+        //     findMatchingPets(queryURLBase2); 
+        //     $("#matchingPet").text($(this).data("name"));
+        // })
     }
 });
 
