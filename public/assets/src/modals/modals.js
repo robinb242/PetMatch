@@ -19,19 +19,17 @@ $("#help-modal-link").on("click", function() {
   ;
 });
 
-//Opens the logout modal from the hamburger menu.
-$("#logout-modal-link").on("click", function() {
-  $('#logout-modal')
-    .modal('show')
-  ;
-});
-
 //Opens the pet description from the search results section of the saved pets page.
 $(".petDescBtn").on("click", function() {
   $('#pet-desc-modal')
     .modal('show')
   ;
 });
+
+//Accordeon is initialized for help modal inside hamburger menu.
+$('.ui.accordion')
+  .accordion()
+;
 
 
 

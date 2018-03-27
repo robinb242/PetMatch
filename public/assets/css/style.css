@@ -27,7 +27,7 @@ html {
 }
 
 /*Have consistent color for buttons throughout the UI.*/
-#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results, #delete-match-results, .delete-pet-confirmed, .find-matching-pets {
+#take-quiz-btn, .choiceBtn, #search-for-btn, #search-btn, #start-quiz-btn, #view-results-btn, .delete-pet, .likeBtn, #find-matching-pets, #match-rating-btn, #save-results, #delete-match-results, .delete-pet-confirmed, .find-matching-pets, #help-close {
   background-color: #672729 !important;
   color: white !important;
 }
@@ -44,7 +44,7 @@ html {
   color: white !important;
 }
 
-/*Quiz instructions text*/
+/*Quiz instructions text size*/
 #quiz-instructions, {
   font-size: 24px !important;
 }
