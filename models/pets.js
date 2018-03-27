@@ -13,6 +13,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         liked: {
             type: DataTypes.BOOLEAN
+        },
+        pet_photo: {
+            type: DataTypes.STRING
         }
     });
     return Pet;
