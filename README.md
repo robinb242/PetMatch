@@ -137,7 +137,6 @@ The first step is to clone the project repository to a local directory on your c
 		<li><p><b>pets.js</b>: This defines the sequelize model for saving any pets that the user likes to the MySQL database. The model defines a database table that includes columns for pet name, pet shelter location, shelter contact information, and whether or not the user likes the pet.</p>
     <img src="readme_images/pet_model.png">
     </li>
-  </li>
   <li>
     <p><b>db/schema.sql</b>: Contains code that you can run to create and set up a MySQL database locally on you computer.</li>
   </li>
