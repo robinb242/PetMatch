@@ -8,7 +8,7 @@ var express = require("express");
 // We are linking our routes to a "data" source.
 // This data source holds an array of information on pet compatibility data.
 var animal = require('../data/animals.js');
-
+var myName = "";
 var myPet = [];
 var newMan = [];
 var counter = 0;
@@ -50,7 +50,7 @@ module.exports = function(app) {
         console.log("here is your scores array " + JSON.stringify(userQuizValues));
         pushTolist(userQuizValues);    
         });
-        
+ 
         function grabInfo() {
             if (counter <= 19) {
                 myPet = [];
