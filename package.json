@@ -26,7 +26,7 @@
     "handlebars": "^4.1.2",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "passport-facebook": "^2.1.1",
     "sequelize": "^4.41.1"
   },
